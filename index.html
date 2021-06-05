@@ -1,7 +1,37 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+<html lang="en">
+  <head>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.25/b-1.7.1/b-colvis-1.7.1/date-1.1.0/sb-1.1.0/datatables.min.css"/>
+    <title>GFLData JSON Viewer</title>
+  </head>
+  
+  <body>
+    <h1>GFLData JSON Viewer</h1>
+	<p>Source data: <a href="https://github.com/randomqwerty/GFLData">https://github.com/randomqwerty/GFLData</a></p>
+	<label for="selectServer">Choose a server and file to import from:</label>
+	
+	<select name="selectServer" id="selectServer">
+	  <option value="en">EN</option>
+	  <option value="jp">JP</option>
+	  <option value="kr">KR</option>
+	  <option value="ch">CH</option>
+	</select>
+	
+	<select name="selectServer" id="selectFile">
+		<option></option>
+	</select>
+	
+	<button onclick="LoadData()">Load data</button>
+	<br>
+	<br>
+	
+	<p>Hover over an item if it is too long to show:</p>
+    <table id="container" style="white-space:nowrap;"></table>
+	
+	<script type="text/javascript" src="jsonFiles.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.25/b-1.7.1/b-colvis-1.7.1/date-1.1.0/sb-1.1.0/datatables.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/plug-ins/1.10.25/dataRender/ellipsis.js"></script>
+  </body>
 </html>
