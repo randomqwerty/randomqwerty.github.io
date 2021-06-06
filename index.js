@@ -1,5 +1,5 @@
-	$(document).ready(function(){
-			// Populate JSON selector with list of files
+	$(document).ready(function(){	
+			// Populate JSON selector with list of files, remove blank option
 			var selectFile = document.getElementById("selectFile");
 			for(var i = 0; i < jsonNames.length; i++) {
 				var opt = jsonNames[i];
@@ -8,15 +8,19 @@
 				el.value = opt;
 				selectFile.appendChild(el);
 			};
+			selectFile.remove(0);
 
-			// Get query strings
+			// Get query strings from URL
 			const queryString = window.location.search;
 			const urlParams = new URLSearchParams(queryString);
 			var server = urlParams.get("server");
 			var file = urlParams.get("file");
-
+			
+			// Load data if query strings are not blank
 			if (file != null && server != null) {
 				LoadData(server, file);
+				
+				// update server and JSON selectors
 				$("#selectServer").val(server);
 				$("#selectFile").val(file);
 			};
@@ -34,9 +38,14 @@
 			// Load table
 			LoadData(server, file);
 			
-			// Update URL with new query strings
+			// Update URL with new query strings if applicable
+			var newURL;
 			var baseURL = window.location.href.split('?')[0];
-			var newURL = baseURL + "?server=" + server + "&file=" + file;
+			if (server.length != 0 && file.length != 0) {
+				newURL = baseURL + "?server=" + server + "&file=" + file;
+			} else {
+				newURL = baseURL;
+			};
 			window.history.pushState('obj', 'Title', newURL);
 		}
 
@@ -54,7 +63,7 @@
 					columns.push({data: columnNames[i], title: columnNames[i]});
 				}
 						
-				// Check if DataTable exists and delete if it does
+				// Check if DataTable already exists and delete if it does
 				if ($.fn.DataTable.isDataTable('#container')) {
 					$('#container').DataTable().destroy();
 					$("#container tr").remove();
@@ -67,7 +76,7 @@
 					"order": [],
 					"pageLength": 100, // show 100 entries by default
 					"dom": "QBlfrtip", // load SearchBuilder for custom searches
-					"fixedHeader": true, // always show headers
+					"fixedHeader": true, // always show headers when scrolling
 					"autoWidth": false, // disable autoresize when columns hidden
 					"columnDefs": [{ // show ellipses for items over 20 characters long
 						"targets": "_all",
@@ -82,14 +91,12 @@
 					"buttons": [{ // buttons to show/hide columns
 						extend: 'colvis',
 						collectionLayout: 'fixed four-column'
-					}]
-					// }],
-					/* Figure out later
-					"searchBuilder": {
+					}],
+					"searchBuilder": { // custom search builder
 						"conditions": {
 							"string": {
-								"contains": {
-									"conditionName": "Contains",
+								"!contains": {  // filters for strings that do not contain the input
+									"conditionName": "Does Not Contain",
 									"init": function (that, fn, preDefined = null) {
 										// Create input element and add the classes to match the SearchBuilder styles-
 										let el = $('<input/>')
@@ -114,20 +121,19 @@
 										return $(el[0]).val().length > 0
 									},
 									"search": function (value, comparison, that) {
-										return comparison.toLowerCase().includes(value.toLowerCase());
+										return !value.includes(comparison[0].toLowerCase());
 									}
 								}
 							}
 						}
 					}
-					*/
 				});
 						
-				// add tooltips for entires with ellipses
-				$('tbody').on('click', 'tr', function() {
-				$(this).children('td:eq(1)').text(table.row( this ).data()[1]);
-				table.cell(this, 1).invalidate('dom');
+				// if user clicks on a cell with ellipses, show text in an alert box
+				$('#container tbody').on('click', 'td', function() {
+					var cell = table.cell(this);
+					var celldata = cell.data();
+					if (celldata.length >= 20) {alert(celldata)};
 				});
 			});
 		};
-			

@@ -9,7 +9,8 @@
     <h1>GFLData JSON Viewer</h1>
 	<p>Source data: <a href="https://github.com/randomqwerty/GFLData">https://github.com/randomqwerty/GFLData</a></p
 
-	<label for="selectServer">Choose a server and file to import from:</label>
+	<label for="selectServer">Choose a server and JSON file to import from:</label>
+	<br>
 	
 	<select name="selectServer" id="selectServer">
 	  <option value="en">EN</option>
@@ -24,9 +25,8 @@
 	
 	<button onclick="UpdateData()">Load data</button>
 	<br>
-	<br>
 	
-	<p>Hover over an item if it is too long to show:</p>
+	<p>If an item shows ellipses, hover over it or click on it.</p>
     <table id="container" style="white-space:nowrap;"></table>
     
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
