@@ -58,17 +58,23 @@
 						
 				// Dynamically generate array of column names
 				var columns = [];
+				var skillColumns = [];
 				columnNames = Object.keys(data[0]);
 				for (var i in columnNames) {
 					columns.push({data: columnNames[i], title: columnNames[i]});
+					
+					// Also keep track of columns indices for skill data
+					if (columnNames[i].includes("skill")) {
+						skillColumns.push(parseInt(i));
+					}
 				}
-						
+				
 				// Check if DataTable already exists and delete if it does
 				if ($.fn.DataTable.isDataTable('#container')) {
 					$('#container').DataTable().destroy();
 					$("#container tr").remove();
 				} 
-						
+				
 				// Create table
 				table = $('#container').DataTable({
 					"data": data,
@@ -79,16 +85,22 @@
 					"dom": "QBlfrtip", // load SearchBuilder for custom searches
 					"fixedHeader": true, // always show headers when scrolling
 					"autoWidth": false, // disable autoresize when columns hidden
-					"columnDefs": [{ // show ellipses for items over 20 characters long
-						"targets": "_all",
-						"data": data,
-						"render": function(data, type, row) {
-							if ( type === 'display') {
-								return renderedData = $.fn.dataTable.render.ellipsis(20)(data, type, row);            
+					"columnDefs": [
+						{ // show ellipses for items over 20 characters long
+							"targets": "_all",
+							"data": data,
+							"render": function(data, type, row) {
+								if ( type === 'display') {								
+									return renderedData = $.fn.dataTable.render.ellipsis(20)(data, type, row);            
+								}
+								return data;
 							}
-							return data;
+						},
+						{ // change skill columns to strings
+							"type": "string",
+							"targets": skillColumns
 						}
-					}],
+					],
 					"buttons": [{ // buttons to show/hide columns
 						extend: 'colvis',
 						collectionLayout: 'fixed four-column'
