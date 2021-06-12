@@ -75,6 +75,7 @@
 					"columns": columns,
 					"order": [],
 					"pageLength": 100, // show 100 entries by default
+					"lengthMenu": [[10, 25, 50, 100, -1], [10,25, 50, 100, "All"]],
 					"dom": "QBlfrtip", // load SearchBuilder for custom searches
 					"fixedHeader": true, // always show headers when scrolling
 					"autoWidth": false, // disable autoresize when columns hidden
