@@ -63,10 +63,11 @@
 				for (var i in columnNames) {
 					columns.push({data: columnNames[i], title: columnNames[i]});
 					
+					/* Removed - will make all columns counted as strings
 					// Also keep track of columns indices for skill data
 					if (columnNames[i].includes("skill")) {
 						skillColumns.push(parseInt(i));
-					}
+					} */
 				}
 				
 				// Check if DataTable already exists and delete if it does
@@ -98,7 +99,7 @@
 						},
 						{ // change skill columns to strings
 							"type": "string",
-							"targets": skillColumns
+							"targets": "_all",
 						}
 					],
 					"buttons": [{ // buttons to show/hide columns
