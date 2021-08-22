@@ -11,6 +11,9 @@ td {
   font-family: 'Noto Sans', 'Noto Sans SC', sans-serif;
   color: #EAEAEA;
 }
+th {
+  text-align: left;
+}
 #container_previous {
 	background-color: #EAEAEA;
 }
@@ -48,4 +51,8 @@ div.dataTables_wrapper .dataTables_filter {
 }
 button.dt-button, div.dt-button, a.dt-button, input.dt-button {
     background-color: #EAEAEA;
+}
+table.fixedHeader-floating {
+  position: fixed !important;
+  background-color: #333333;
 }

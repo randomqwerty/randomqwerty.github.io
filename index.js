@@ -81,12 +81,13 @@
 					"data": data,
 					"columns": columns,
 					"order": [],
-					"pageLength": 100, // show 100 entries by default
+					"pageLength": -1, // show all entries by default
 					"lengthMenu": [[10, 25, 50, 100, -1], [10,25, 50, 100, "All"]],
 					"dom": "QBlfrtip", // load SearchBuilder for custom searches
 					"fixedHeader": true, // always show headers when scrolling
 					"autoWidth": false, // disable autoresize when columns hidden
 					"columnDefs": [
+						/*
 						{ // show ellipses for items over 20 characters long
 							"targets": "_all",
 							"data": data,
@@ -96,16 +97,23 @@
 								}
 								return data;
 							}
-						},
-						{ // change skill columns to strings
+						},*/
+						{ // change skill columns to strings to allow for doesn't/does contain filters
 							"type": "string",
 							"targets": "_all",
+						},
+					],
+					"buttons": [
+						'copy',
+						{// button to export to Excel
+							extend: 'excel',
+							filename: server + "_" + file
+						},
+						{ // buttons to show/hide columns
+							extend: 'colvis',
+							collectionLayout: 'fixed four-column'
 						}
 					],
-					"buttons": [{ // buttons to show/hide columns
-						extend: 'colvis',
-						collectionLayout: 'fixed four-column'
-					}],
 					"searchBuilder": { // custom search builder
 						"conditions": {
 							"string": {
@@ -142,12 +150,14 @@
 						}
 					}
 				});
-						
+				
+				new $.fn.dataTable.ColReorder(table)
+				
 				// if user clicks on a cell with ellipses, show text in an alert box
-				$('#container tbody').on('click', 'td', function() {
+				/*$('#container tbody').on('click', 'td', function() {
 					var cell = table.cell(this);
 					var celldata = cell.data();
 					if (celldata.length >= 20) {alert(celldata)};
-				});
+				});*/
 			});
 		};
