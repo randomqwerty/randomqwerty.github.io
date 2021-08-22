@@ -62,12 +62,6 @@
 				columnNames = Object.keys(data[0]);
 				for (var i in columnNames) {
 					columns.push({data: columnNames[i], title: columnNames[i]});
-					
-					/* Removed - will make all columns counted as strings
-					// Also keep track of columns indices for skill data
-					if (columnNames[i].includes("skill")) {
-						skillColumns.push(parseInt(i));
-					} */
 				}
 				
 				// Check if DataTable already exists and delete if it does
@@ -81,7 +75,7 @@
 					"data": data,
 					"columns": columns,
 					"order": [],
-					"pageLength": -1, // show all entries by default
+					"pageLength": 100, // show 100 entries by default
 					"lengthMenu": [[10, 25, 50, 100, -1], [10,25, 50, 100, "All"]],
 					"dom": "QBlfrtip", // load SearchBuilder for custom searches
 					"fixedHeader": true, // always show headers when scrolling
@@ -104,14 +98,14 @@
 						},
 					],
 					"buttons": [
+						{ // buttons to show/hide columns
+							extend: 'colvis',
+							collectionLayout: 'fixed four-column'
+						},
 						'copy',
 						{// button to export to Excel
 							extend: 'excel',
 							filename: server + "_" + file
-						},
-						{ // buttons to show/hide columns
-							extend: 'colvis',
-							collectionLayout: 'fixed four-column'
 						}
 					],
 					"searchBuilder": { // custom search builder
@@ -149,10 +143,7 @@
 							}
 						}
 					}
-				});
-				
-				new $.fn.dataTable.ColReorder(table)
-				
+				});				
 				// if user clicks on a cell with ellipses, show text in an alert box
 				/*$('#container tbody').on('click', 'td', function() {
 					var cell = table.cell(this);
