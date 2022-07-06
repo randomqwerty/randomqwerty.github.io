@@ -58,7 +58,6 @@
 						
 				// Dynamically generate array of column names
 				var columns = [];
-				var skillColumns = [];
 				columnNames = Object.keys(data[0]);
 				for (var i in columnNames) {
 					columns.push({data: columnNames[i], title: columnNames[i]});
@@ -82,18 +81,7 @@
 					"autoWidth": false, // disable autoresize when columns hidden
 					"select": true, // initialize select extension to highlight rows
 					"columnDefs": [
-						/*
-						{ // show ellipses for items over 20 characters long
-							"targets": "_all",
-							"data": data,
-							"render": function(data, type, row) {
-								if ( type === 'display') {								
-									return renderedData = $.fn.dataTable.render.ellipsis(20)(data, type, row);            
-								}
-								return data;
-							}
-						},*/
-						{ // change skill columns to strings to allow for doesn't/does contain filters
+						{ // change columns to strings to allow for doesn't/does contain filters
 							"type": "string",
 							"targets": "_all",
 						},
@@ -145,11 +133,5 @@
 						}
 					}
 				});				
-				// if user clicks on a cell with ellipses, show text in an alert box
-				/*$('#container tbody').on('click', 'td', function() {
-					var cell = table.cell(this);
-					var celldata = cell.data();
-					if (celldata.length >= 20) {alert(celldata)};
-				});*/
 			});
 		};
