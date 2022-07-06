@@ -80,6 +80,7 @@
 					"dom": "QBlfrtip", // load SearchBuilder for custom searches
 					"fixedHeader": true, // always show headers when scrolling
 					"autoWidth": false, // disable autoresize when columns hidden
+					"select": true, // initialize select extension to highlight rows
 					"columnDefs": [
 						/*
 						{ // show ellipses for items over 20 characters long
