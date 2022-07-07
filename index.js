@@ -95,6 +95,7 @@
 						{ // button to export to Excel
 							extend: 'excelHtml5',
 							filename: server + "_" + file,
+							title: '',
 							exportOptions: {
 								columns: ':visible', // export only visible columns
 								format: {
