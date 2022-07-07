@@ -92,9 +92,20 @@
 							collectionLayout: 'fixed four-column'
 						},
 						'copy',
-						{// button to export to Excel
-							extend: 'excel',
-							filename: server + "_" + file
+						{ // button to export to Excel
+							extend: 'excelHtml5',
+							filename: server + "_" + file,
+							exportOptions: {
+								columns: ':visible', // export only visible columns
+								format: {
+									// if the data is numeric after removing all commas, replace those commas with spaces before exporting; otherwise keep it as-is
+									// this is to prevent Excel from converting comma-separated lists of numbers (e.g., skill IDs) to a single large number
+									body: function(data, row, column, node) {
+										data = $('<p>' + data + '</p>').text();
+										return $.isNumeric(data.replaceAll(',', '')) ? data.replaceAll(',', ' ') : data;
+									}
+								}
+							}
 						}
 					],
 					"searchBuilder": { // custom search builder
