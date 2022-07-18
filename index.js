@@ -91,16 +91,28 @@
 							extend: 'colvis',
 							collectionLayout: 'fixed four-column'
 						},
-						'copy',
+						{ // buton to copy to clipboard 
+							extend: 'copy',
+							title: '',
+							exportOptions: {
+								// if the data is numeric after removing all commas, replace those commas with spaces before exporting; otherwise keep it as-is
+								// this is to prevent Excel from converting comma-separated lists of numbers (e.g., skill IDs) to a single large number
+								columns: ':visible', // export only visible columns
+								format: {
+									body: function(data, row, column, node) {
+										data = $('<p>' + data + '</p>').text();
+										return $.isNumeric(data.replaceAll(',', '')) ? data.replaceAll(',', ' ') : data;
+									}
+								}
+							}
+						},
 						{ // button to export to Excel
 							extend: 'excelHtml5',
 							filename: server + "_" + file,
 							title: '',
 							exportOptions: {
-								columns: ':visible', // export only visible columns
+								columns: ':visible',
 								format: {
-									// if the data is numeric after removing all commas, replace those commas with spaces before exporting; otherwise keep it as-is
-									// this is to prevent Excel from converting comma-separated lists of numbers (e.g., skill IDs) to a single large number
 									body: function(data, row, column, node) {
 										data = $('<p>' + data + '</p>').text();
 										return $.isNumeric(data.replaceAll(',', '')) ? data.replaceAll(',', ' ') : data;
