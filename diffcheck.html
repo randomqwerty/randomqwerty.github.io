@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsondiffpatch/0.4.1/formatters-styles/html.css">
+	<link rel="stylesheet" href="diffcheck.css">
+    <title>GFL Data - Diff Checker</title>
+  </head>
+  
+  <body>
+    <h1>GFLData - Diff Checker</h1>
+	<p>Data from: <a href="https://github.com/randomqwerty/GFLData">https://github.com/randomqwerty/GFLData</a></p>
+	<p><a href="index.html">Data Viewer</a></p>
+
+	<br>
+	<label for="selectServer">Choose servers and a file to compare:</label>
+	<br>
+	
+	<select name="selectServer" id="selectServer">
+	  <option value="en">EN</option>
+	  <option value="jp">JP</option>
+	  <option value="kr">KR</option>
+	  <option value="ch">CH</option>
+	</select>
+	
+	<select name="selectServer2" id="selectServer2">
+	  <option value="ch">CH</option>
+	  <option value="jp">JP</option>
+	  <option value="kr">KR</option>
+	  <option value="en">EN</option>
+	</select>
+	
+	<select name="selectFile" id="selectFile">
+		<option></option>
+	</select>
+	
+	<button onclick="SwapServers()">Swap Servers</button>
+	<button onclick="CompareData()">Compare Files</button>
+	
+	<br>
+	<br>
+	
+	<label for "showUnchanged">Show unchanged values?</label><input type="checkbox" id="showUnchanged" onclick="showUnchanged()">
+	<br>
+	<div id="visual"></div>
+    
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsondiffpatch/0.4.1/jsondiffpatch.umd.js"></script>
+	<script type="text/javascript" src="jsonFiles.js"></script>
+	<script type="text/javascript" src="diffcheck.js"></script>
+  </body>
+</html>
