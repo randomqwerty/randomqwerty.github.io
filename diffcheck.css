@@ -16,6 +16,6 @@ a {
   color: #EAEAEA;
 }
 
-.jsondiffpatch-added, .jsondiffpatch-deleted, .jsondiffpatch-left-value, .jsondiffpatch-right-value {
+.jsondiffpatch-added, .jsondiffpatch-deleted, .jsondiffpatch-left-value, .jsondiffpatch-right-value, .jsondiffpatch-textdiff-added, .jsondiffpatch-textdiff-deleted {
   color: #000000
 }
