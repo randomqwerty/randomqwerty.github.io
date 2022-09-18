@@ -9,6 +9,23 @@
 			selectFile.appendChild(el);
 		};
 		selectFile.remove(0);
+		
+		// Get query strings from URL
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		var server = urlParams.get("server");
+		var server2 = urlParams.get("server2");
+		var file = urlParams.get("file");
+			
+		// Load data if query strings are not blank
+		if (file != null && server != null && server2 != null) {				
+			// update server and JSON selectors
+			$("#selectServer").val(server);
+			$("#selectServer2").val(server2);
+			$("#selectFile").val(file);
+			
+			CompareData();
+		};
 	});
 	
 	function CompareData() {
@@ -30,6 +47,16 @@
 			alert("Error: selected servers are the same");
 		}
 		else {		
+			// Update URL with new query strings if applicable
+			var newURL;
+			var baseURL = window.location.href.split('?')[0];
+			if (server.length != 0 && server2.length && file.length != 0) {
+				newURL = baseURL + "?server=" + server + "&server2=" + server2 + "&file=" + file;
+			} else {
+				newURL = baseURL;
+			};
+			window.history.pushState('obj', 'Title', newURL);
+			
 			// Load first json
 			var left = (function () {
 				var left = null;
@@ -61,18 +88,22 @@
 			})();
 			
 			// Compute delta
-			var delta = jsondiffpatch.diff(left, right);
+			var delta = jsondiffpatch.create({
+				    objectHash: function(obj, index) {
+					// try to find an id property, otherwise just use the index in the array
+					return obj.id || obj.lv || obj.mission_id || obj.identity || obj.difficult_level || obj.perform_creation_id || obj.category || obj.obtain_id || '$$index:' + index;
+				}
+			}).diff(left, right);
 
 			// Create visual diffs
 			document.getElementById('visual').innerHTML = jsondiffpatch.formatters.html.format(delta, left);
-			
 			
 			if (document.getElementById('showUnchanged').checked) {
 				jsondiffpatch.formatters.html.showUnchanged();
             }
 			else {
 				jsondiffpatch.formatters.html.hideUnchanged();
-			}
+			};
 		}
 	}
 	
