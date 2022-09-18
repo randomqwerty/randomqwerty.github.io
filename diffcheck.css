@@ -15,7 +15,12 @@ p {
 a {
   color: #EAEAEA;
 }
-
-.jsondiffpatch-added, .jsondiffpatch-deleted, .jsondiffpatch-left-value, .jsondiffpatch-right-value, .jsondiffpatch-textdiff-added, .jsondiffpatch-textdiff-deleted {
-  color: #000000
+.jsondiffpatch-added .jsondiffpatch-property-name, .jsondiffpatch-added .jsondiffpatch-value pre, .jsondiffpatch-modified .jsondiffpatch-right-value pre, .jsondiffpatch-textdiff-added {
+  background: #006600;
+}
+.jsondiffpatch-deleted .jsondiffpatch-property-name, .jsondiffpatch-deleted pre, .jsondiffpatch-modified .jsondiffpatch-left-value pre, .jsondiffpatch-textdiff-deleted {
+  background: #850000;
+}
+.jsondiffpatch-moved .jsondiffpatch-moved-destination {
+  background: #850000;
 }

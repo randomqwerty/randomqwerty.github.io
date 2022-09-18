@@ -12,9 +12,8 @@
 	<p><a href="index.html">Data Viewer</a></p>
 
 	<br>
-	<label for="selectServer">Choose servers and a file to compare:<br>For best results, use Firefox or a browser with no memory limits instead of Chrome. Large files (ex: battle_skill_config) may take a long time to process.</label>
-	<br>
-	
+	<p>For best results, use Firefox or a browser with no memory limits instead of Chrome. Large files (ex: battle_skill_config) may take a long time to process.</p>
+	<label for="selectServer">Choose servers and a file to compare:</label>	
 	<select name="selectServer" id="selectServer">
 	  <option value="en">EN</option>
 	  <option value="jp">JP</option>
@@ -32,6 +31,11 @@
 	<select name="selectFile" id="selectFile">
 		<option></option>
 	</select>
+	
+	<br>
+	<label for="filterInput">Optional filter on file's id field (work-in-progress):</label>
+	<input type="text" id="filterInput"></input>
+	<br>
 	
 	<button onclick="SwapServers()">Swap Servers</button>
 	<button onclick="CompareData()">Compare Files</button>
