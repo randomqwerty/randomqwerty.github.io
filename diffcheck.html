@@ -28,16 +28,31 @@
 	  <option value="en">EN</option>
 	</select>
 	
-	<select name="selectFile" id="selectFile">
+	<select name="selectFile" id="selectFile" onchange="UpdateFieldSelector(this.value)">
 		<option></option>
 	</select>
 	
 	<br>
-	<label for="filterInput">Optional filter on file's id field (work-in-progress):</label>
+	<label for="filterInput">Optional filters:</label>
+	
+	<select name="selectField" id="selectField">
+	<option></option>
+	</select>
+	
+	<select name="selectCriteria" id="selectCriteria">
+		<option value="equals">Equals</option>
+		<option value="not">Not</option>
+		<option value="starts">Starts With</option>
+		<option value="notstarts">Does Not Start With</option>
+		<option value="contains">Contains</option>
+		<option value="notcontains">Does Not Contain</option>
+	</select>
+	
 	<input type="text" id="filterInput"></input>
 	<br>
 	
 	<button onclick="SwapServers()">Swap Servers</button>
+	<button onclick="ClearFilter()">Clear Filter</button>
 	<button onclick="CompareData()">Compare Files</button>
 	
 	<br>
@@ -50,6 +65,7 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsondiffpatch/0.4.1/jsondiffpatch.umd.js"></script>
 	<script type="text/javascript" src="jsonFiles.js"></script>
+	<script type="text/javascript" src="mappings.json"></script>
 	<script type="text/javascript" src="diffcheck.js"></script>
   </body>
 </html>

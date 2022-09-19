@@ -9,22 +9,31 @@
 			selectFile.appendChild(el);
 		};
 		selectFile.remove(0);
-		
+			
 		// Get query strings from URL
 		const queryString = window.location.search;
 		const urlParams = new URLSearchParams(queryString);
 		var server = urlParams.get("l");
 		var server2 = urlParams.get("r");
 		var file = urlParams.get("file");
-		var id = urlParams.get("id");
+		var field = urlParams.get("field");
+		var criteria = urlParams.get("criteria");
+		var val= urlParams.get("val");
+		
+		// Use default file's fields if no query string
+		if (file == null) {
+			UpdateFieldSelector("achievement");
+		}
 			
-		// Load data if query strings are not blank (id is optional)
+		// Compare files if query strings are not blank (field/criteria/val are optional)
 		if (file != null && server != null && server2 != null) {				
 			// update server and JSON selectors
-			$("#selectServer").val(server);
-			$("#selectServer2").val(server2);
-			$("#selectFile").val(file);
-			$("#filterInput").val(id);
+			$("#selectServer").val(server).change();
+			$("#selectServer2").val(server2).change();
+			$("#selectFile").val(file).change();
+			$("#selectField").val(field).change();
+			$("#selectCriteria").val(criteria).change();
+			$("#filterInput").val(val).change();
 			
 			CompareData();
 		};
@@ -41,8 +50,16 @@
 		e = document.getElementById("selectFile");
 		var file = e.options[e.selectedIndex].value;
 		
-		// Grab id
-		var id = String(document.getElementById("filterInput").value);
+		// Grab selected field
+		e = document.getElementById("selectField");
+		var field = e.options[e.selectedIndex].value;
+		
+		// Grab selected criteria
+		e = document.getElementById("selectCriteria");
+		var criteria = e.options[e.selectedIndex].value;		
+		
+		// Grab val for comparison
+		var val = String(document.getElementById("filterInput").value);
 		
 		// Generate path to JSON file
 		var jsonPath = "https://raw.githubusercontent.com/randomqwerty/GFLData/main/" + server + "/stc/" + file + ".json";
@@ -56,8 +73,8 @@
 			var newURL;
 			var baseURL = window.location.href.split('?')[0];
 			if (server.length != 0 && server2.length && file.length != 0) {
-				if (id.length != 0) {
-					newURL = baseURL + "?l=" + server + "&r=" + server2 + "&file=" + file + "&id=" + id;
+				if (val.length != 0) {
+					newURL = baseURL + "?l=" + server + "&r=" + server2 + "&file=" + file + "&field=" + field + "&criteria=" + criteria + "&val=" + val;
 				}
 				else {
 					newURL = baseURL + "?l=" + server + "&r=" + server2 + "&file=" + file;
@@ -97,22 +114,17 @@
 				return right;
 			})();
 			
-			// Filter jsons by matching id fields to id input
-			if (id.length != 0) {
-				left = left.filter(function (v) {
-					return v.id == id || v.lv == id || v.mission_id == id || v.identity == id || v.difficult_level == id || v.perform_creation_id == id || v.category == id || v.obtain_id == id || v.item_id == id || v.type == id || v.draw_id == id || v.level == id || v.type_id == id || v.star_id == id;
-				});
-
-				right = right.filter(function (v) {
-					return v.id == id || v.lv == id || v.mission_id == id || v.identity == id || v.difficult_level == id || v.perform_creation_id == id || v.category == id || v.obtain_id == id || v.item_id == id || v.type == id || v.draw_id == id || v.level == id || v.type_id == id || v.star_id == id;
-				});
+			// Filter jsons by matching fields to input
+			if (val.length != 0) {
+				left = filterJson(left, field, criteria, val);
+				right = filterJson(right, field, criteria, val);
 			}
 			
 			// Compute delta
+			var firstField = document.getElementById("selectField").options[0].value;
 			var delta = jsondiffpatch.create({
 				    objectHash: function(obj, index) {
-					// try to find an id property, otherwise just use the index in the array
-					return obj.id || obj.lv || obj.mission_id || obj.identity || obj.difficult_level || obj.perform_creation_id || obj.category || obj.obtain_id || obj.item_id || obj.type || obj.draw_id || obj.level || obj.type_id || obj.star_id || '$$index:' + index;
+					return obj[firstField];  // hash by first field in file
 				}
 			}).diff(left, right);
 
@@ -152,3 +164,50 @@
 		$("#selectServer").val(server2);
 		$("#selectServer2").val(server);
 	}
+	
+	function filterJson(data, field, criteria, val) {
+		return data.filter(function (v) {
+			temp = String(v[field]).toLowerCase();
+			if (criteria == "equals") {
+				return temp == val.toLowerCase();
+			}
+			else if (criteria == "not") {
+				return temp != val.toLowerCase();
+			}
+			else if (criteria == "starts") {
+				return temp.startsWith(val.toLowerCase());
+			}
+			else if (criteria == "notstarts") {
+				return !temp.startsWith(val.toLowerCase());
+			}
+			else if (criteria == "contains") {
+				return temp.includes(val.toLowerCase())
+			}
+			else if (criteria == "notcontains") {
+				return !temp.includes(val.toLowerCase())
+			}
+		});
+	}
+	
+	function UpdateFieldSelector(file) {
+		// Filter mappings to get field names for selected file only
+		var filteredmappings = mappings.filter(function (v) {
+			return v.name == file;
+		});
+		
+		// Delete any existing fields and add new ones
+		var selectField = document.getElementById("selectField");		
+		selectField.options.length = 0;
+		for(var i = 0; i < filteredmappings[0].fields.length; i++) {
+			var opt = filteredmappings[0].fields[i];
+			var el = document.createElement("option");
+			el.textContent = opt;
+			el.value = opt;
+			selectField.appendChild(el);
+		};
+	}
+
+	function ClearFilter() {
+		$("#filterInput").val("").change();
+	}
+	

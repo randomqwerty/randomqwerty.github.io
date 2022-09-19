@@ -1,0 +1,3563 @@
+var mappings = [
+{
+    "name": "item",
+    "fields": [
+        "id",
+        "type",
+        "arg",
+        "code",
+        "item_name",
+        "introduction",
+        "rank",
+        "sort",
+        "initial_num",
+        "daily_limit",
+        "upper_limit",
+        "consume_type",
+        "item_access",
+        "detail_introduction",
+        "is_hide_info"
+    ]
+},
+{
+    "name": "battle_skill_config",
+    "fields": [
+        "id",
+        "name",
+        "skill_group_id",
+        "level",
+        "type",
+        "skill_priority",
+        "cd_type",
+        "cd_time",
+        "start_cd_time",
+        "trigger_id",
+        "trigger_type",
+        "trigger_target",
+        "trigger_parameter",
+        "trigger_buff_id",
+        "target_select_ai",
+        "is_re_target",
+        "action_id",
+        "skill_duration",
+        "is_form_action",
+        "skin_action",
+        "skin_name",
+        "buff_id_target",
+        "buff_id_self",
+        "buff_type_target",
+        "buff_type_self",
+        "buff_delay",
+        "description",
+        "lvup_description",
+        "data_pool_1",
+        "data_pool_2",
+        "night_data_pool_1",
+        "night_data_pool_2",
+        "sp_data_pool_1",
+        "sp_data_pool_2",
+        "sppool_trigger_id",
+        "sppool_trigger_type",
+        "sppool_trigger_target",
+        "sppool_trigger_parameter",
+        "sppool_trigger_buff_id",
+        "code",
+        "train_coin_type",
+        "train_coin_number",
+        "target_lost",
+        "daynight_only",
+        "interrupt_type",
+        "interrupt_damage_limit",
+        "creation_number",
+        "is_switch",
+        "passive_name",
+        "weight",
+        "consumption",
+        "is_rare",
+        "skill_up_time",
+        "rank",
+        "is_mindupdate",
+        "is_manual",
+        "is_cdr",
+        "skill_lv_call",
+        "special_buff_trigger",
+        "continue_after_death"
+    ]
+},
+{
+    "name": "spot",
+    "fields": [
+        "id",
+        "mission_id",
+        "type",
+        "special_eft",
+        "route",
+        "coordinator_x",
+        "coordinator_y",
+        "enemy_team_id",
+        "ally_team_id",
+        "belong",
+        "random_get",
+        "map_type",
+        "curve_control",
+        "active_cycle",
+        "durability",
+        "map_route",
+        "map_code",
+        "hostage_info",
+        "building_id",
+        "forbid_specialspot",
+        "map_num",
+        "package",
+        "auto_teleport",
+        "spot_effect"
+    ]
+},
+{
+    "name": "enemy_in_team",
+    "fields": [
+        "id",
+        "enemy_team_id",
+        "enemy_character_type_id",
+        "coordinator_x",
+        "coordinator_y",
+        "level",
+        "number",
+        "is_advance",
+        "def_percent",
+        "batch"
+    ]
+},
+{
+    "name": "gun_in_ally",
+    "fields": [
+        "id",
+        "gun_id",
+        "gun_level",
+        "location",
+        "position",
+        "life",
+        "pow",
+        "hit",
+        "dodge",
+        "rate",
+        "skill1",
+        "skill2",
+        "number",
+        "equip1",
+        "equip2",
+        "equip3",
+        "skin",
+        "eat_lv",
+        "if_modification"
+    ]
+},
+{
+    "name": "gun",
+    "fields": [
+        "id",
+        "name",
+        "en_name",
+        "code",
+        "introduce",
+        "dialogue",
+        "extra",
+        "en_introduce",
+        "character",
+        "type",
+        "rank",
+        "develop_duration",
+        "baseammo",
+        "basemre",
+        "ammo_add_withnumber",
+        "mre_add_withnumber",
+        "retiremp",
+        "retireammo",
+        "retiremre",
+        "retirepart",
+        "ratio_life",
+        "ratio_pow",
+        "ratio_rate",
+        "ratio_speed",
+        "ratio_hit",
+        "ratio_dodge",
+        "ratio_armor",
+        "armor_piercing",
+        "crit",
+        "special",
+        "eat_ratio",
+        "ratio_range",
+        "skill1",
+        "skill2",
+        "normal_attack",
+        "passive_skill",
+        "dynamic_passive_skill",
+        "effect_grid_center",
+        "effect_guntype",
+        "effect_grid_pos",
+        "effect_grid_effect",
+        "max_equip",
+        "type_equip1",
+        "type_equip2",
+        "type_equip3",
+        "type_equip4",
+        "ai",
+        "is_additional",
+        "launch_time",
+        "obtain_ids",
+        "rank_display",
+        "prize_id",
+        "mindupdate_consume",
+        "explore_tag",
+        "gun_detail_bg",
+        "org_id",
+        "related_story_id",
+        "show_damage_skin"
+    ]
+},
+{
+    "name": "squad",
+    "fields": [
+        "id",
+        "name",
+        "en_name",
+        "code",
+        "introduce",
+        "dialogue",
+        "extra",
+        "en_introduce",
+        "type",
+        "assist_type",
+        "population",
+        "cpu_id",
+        "hp",
+        "assist_damage",
+        "assist_reload",
+        "assist_hit",
+        "assist_def_break",
+        "damage",
+        "atk_speed",
+        "hit",
+        "basic_rate",
+        "cpu_rate",
+        "crit_rate",
+        "crit_damage",
+        "armor_piercing",
+        "dodge",
+        "move",
+        "assist_armor_piercing",
+        "battle_assist_range",
+        "display_assist_damage_area",
+        "display_assist_area_coef",
+        "attack_range",
+        "night_vision",
+        "skill1",
+        "skill2",
+        "skill3",
+        "performance_skill",
+        "passive_skill",
+        "dynamic_passive_skill",
+        "normal_attack",
+        "advanced_bonus",
+        "deploy_round",
+        "assist_attack_round",
+        "attack_round",
+        "baseammo",
+        "basemre",
+        "ammo_part",
+        "mre_part",
+        "is_additional",
+        "launch_time",
+        "obtain_ids",
+        "piece_item_id",
+        "destroy_coef",
+        "assist_damage_destroy_coef",
+        "mission_skill_repair",
+        "develop_duration",
+        "dorm_ai",
+        "normal_attack_description",
+        "is_show",
+        "org_id"
+    ]
+},
+{
+    "name": "squad_advanced_bonus",
+    "fields": [
+        "id",
+        "group_id",
+        "lv",
+        "unlock_number",
+        "assist_damage",
+        "assist_reload",
+        "assist_hit",
+        "assist_def_break",
+        "damage",
+        "atk_speed",
+        "hit",
+        "def"
+    ]
+},
+{
+    "name": "squad_chip",
+    "fields": [
+        "id",
+        "name",
+        "rank",
+        "color",
+        "grid",
+        "is_random",
+        "random_number",
+        "assist_damage",
+        "assist_def_break",
+        "assist_hit",
+        "assist_reload",
+        "intensity_ratio",
+        "grid_number",
+        "damage",
+        "atk_speed",
+        "hit",
+        "def",
+        "bonus_type",
+        "type",
+        "fit_squads",
+        "develop_duration"
+    ]
+},
+{
+    "name": "squad_cpu",
+    "fields": [
+        "id",
+        "color",
+        "grid1",
+        "grid2",
+        "grid3",
+        "grid4",
+        "grid5",
+        "cpu_bonus"
+    ]
+},
+{
+    "name": "squad_color",
+    "fields": [
+        "id",
+        "rgb",
+        "fliter_text",
+        "fliter_pic",
+        "rank_weight"
+    ]
+},
+{
+    "name": "squad_grid",
+    "fields": [
+        "id",
+        "grid",
+        "grid_number",
+        "rank_weight",
+        "code"
+    ]
+},
+{
+    "name": "squad_data_daily",
+    "fields": [
+        "id",
+        "title",
+        "content",
+        "type",
+        "count",
+        "rank",
+        "prize"
+    ]
+},
+{
+    "name": "squad_exp",
+    "fields": [
+        "lv",
+        "exp",
+        "precise"
+    ]
+},
+{
+    "name": "live2d",
+    "fields": [
+        "id",
+        "motions",
+        "code",
+        "fit_gun",
+        "skin",
+        "mail_offset_x",
+        "mail_offset_y",
+        "mail_scale",
+        "skinType",
+        "skinLogo",
+        "fit_sangvis",
+        "is_show"
+    ]
+},
+{
+    "name": "building",
+    "fields": [
+        "id",
+        "defender",
+        "defender_upper",
+        "belong",
+        "hold_belong",
+        "mission_skill",
+        "battle_skill",
+        "condition",
+        "is_destroy",
+        "is_rebuild",
+        "draw_event",
+        "name",
+        "code",
+        "shifting_spot",
+        "shifting_team",
+        "battle_assist_range",
+        "performance_skill",
+        "show_info",
+        "working_special_spot",
+        "trigger_distance",
+        "active_mission_skill",
+        "inherent_mission_skill",
+        "type",
+        "is_focus",
+        "transition",
+        "belong_color",
+        "working_spot_activation",
+        "active_building_info",
+        "initial_state",
+        "pref_code",
+        "des",
+        "confront_des",
+        "squadinfoid",
+        "missionskill_on_death"
+    ]
+},
+{
+    "name": "mission",
+    "fields": [
+        "id",
+        "duplicate_type",
+        "coin_type",
+        "campaign",
+        "sub",
+        "if_emergency",
+        "endless_mode",
+        "special_type",
+        "name",
+        "difficulty",
+        "exp_parameter",
+        "type",
+        "enemy_ai_type",
+        "win_turn",
+        "win_spot_id",
+        "special_spot_id",
+        "expect_enemy_die_num",
+        "expect_gun_die_num",
+        "expect_turn",
+        "boss_team_id",
+        "turn_duration",
+        "costbp",
+        "getcoin",
+        "getcoin_parameter",
+        "coin_ap",
+        "turn_limit",
+        "limit_gun_pool",
+        "limit_team",
+        "map_res_name",
+        "map_information",
+        "is_hide",
+        "is_snow",
+        "adaptive_gun",
+        "fog_length",
+        "fog_color",
+        "limit_equip_pool",
+        "draw_event_s_id",
+        "support_available",
+        "enemy_quickmove",
+        "expect_defend_line_turn",
+        "expect_hostage_num",
+        "title_logo",
+        "random_line_spot",
+        "order",
+        "reinforce_ally_team",
+        "reinforce_ally_turn",
+        "reinforce_ally_spot",
+        "ally_boss_team_id",
+        "ally_code",
+        "supply_parameter",
+        "drop_mission_key",
+        "close_missions",
+        "mission_group_id",
+        "mission_group_draw_event",
+        "open_mission_keys",
+        "mission_describe",
+        "force_type",
+        "round_config",
+        "color_change_type",
+        "color_change_number",
+        "color_change_result",
+        "spot_reset",
+        "draw_code",
+        "reset_drop_key_once",
+        "close_mission_control",
+        "limit_squad",
+        "open_mission_items",
+        "drop_mission_item",
+        "mapped_mission_id",
+        "branch_next_mission_id",
+        "win_type",
+        "medal_type_silver",
+        "drop_item_count",
+        "difficulty_recommend",
+        "difficulty_recommend_addendum",
+        "limit_sangvis",
+        "mission_tip",
+        "win_step",
+        "event_score",
+        "score_prize",
+        "drop_key_info",
+        "lose_type",
+        "fight_environment_group",
+        "environment_transform_config"
+    ]
+},
+{
+    "name": "battle_creation",
+    "fields": [
+        "id",
+        "name",
+        "code",
+        "start_type",
+        "start_offset",
+        "destination_type",
+        "destination_offset",
+        "decision_offset",
+        "is_form_offset",
+        "is_form_offset_start",
+        "is_tracing",
+        "is_clone",
+        "random_number",
+        "random_offset",
+        "route_type",
+        "route_hight",
+        "speed",
+        "easing_type",
+        "spin_velocity",
+        "rotate",
+        "exist_duration",
+        "effect_type",
+        "effect_area",
+        "effect_param_1",
+        "effect_param_2",
+        "hurt_id",
+        "hurt_cd",
+        "buff_id",
+        "buff_type",
+        "buff_cd",
+        "is_single_hurt",
+        "is_form_play",
+        "creation_type",
+        "scale",
+        "trigger_creation_id",
+        "trigger_creation_delay",
+        "sound_order",
+        "sound_delay",
+        "summoner_order",
+        "summoner_delay",
+        "is_die_delete",
+        "edge_indicator",
+        "still_exist",
+        "is_orb_effect",
+        "is_stay_trigger",
+        "active_times"
+    ]
+},
+{
+    "name": "squad_chip_exp",
+    "fields": [
+        "lv",
+        "exp",
+        "strength_coef"
+    ]
+},
+{
+    "name": "squad_cpu_completion",
+    "fields": [
+        "id",
+        "group_id",
+        "lv",
+        "unlock_number",
+        "assist_damage",
+        "assist_reload",
+        "assist_hit",
+        "assist_def_break",
+        "damage",
+        "atk_speed",
+        "hit",
+        "def"
+    ]
+},
+{
+    "name": "squad_rank",
+    "fields": [
+        "star_id",
+        "lv_unlock",
+        "cost_self_piece",
+        "cpu_rate"
+    ]
+},
+{
+    "name": "squad_standard_attribution",
+    "fields": [
+        "id",
+        "attribute_type",
+        "name",
+        "standard_attribute",
+        "cpu_standard_attribute",
+        "basic_rate",
+        "cpu_rate",
+        "role_id"
+    ]
+},
+{
+    "name": "squad_type",
+    "fields": [
+        "type_id",
+        "name",
+        "en_name",
+        "class_name",
+        "class_en_name",
+        "hp",
+        "assist_damage",
+        "assist_reload",
+        "assist_hit",
+        "assist_def_break",
+        "damage",
+        "atk_speed",
+        "hit",
+        "def",
+        "fix_type",
+        "fix_time",
+        "mp_fix",
+        "part_fix"
+    ]
+},
+{
+    "name": "battle_buff",
+    "fields": [
+        "id",
+        "name",
+        "description",
+        "conflict_type",
+        "max_tier",
+        "type",
+        "duration_type",
+        "duration",
+        "delay",
+        "probability",
+        "boss_available",
+        "armor_reduce_number",
+        "pow_number",
+        "dodge_number",
+        "hit_number",
+        "rate_number",
+        "critical_number",
+        "critical_damage_number",
+        "damage_reduce_number",
+        "damage_return_number",
+        "move_number",
+        "shield_number",
+        "arp_number",
+        "trigger_creation_id",
+        "trigger_creation_delay",
+        "is_form_play",
+        "buff_animation",
+        "buff_description",
+        "available_gun_type",
+        "available_gun_type2",
+        "def_number",
+        "defbreak_number",
+        "maxdef_number",
+        "cdr_number",
+        "forced_skill",
+        "fix_damage",
+        "night_view_percent",
+        "range_number",
+        "watch_id",
+        "orb_effect",
+        "hurt_id",
+        "hurt_cd"
+    ]
+},
+{
+    "name": "battle_hurt_config",
+    "fields": [
+        "id",
+        "description",
+        "damage_ratio",
+        "extra_damage",
+        "buff_id",
+        "harm_delay",
+        "target_move",
+        "is_critical_hit",
+        "critical_hit_rate",
+        "float_wide",
+        "trigger_creation_id",
+        "trigger_creation_delay",
+        "is_form_hurt",
+        "is_miss",
+        "is_armor",
+        "beat_back_percent",
+        "buff_id_target",
+        "buff_id_self",
+        "hurt_buff_trigger_type",
+        "buff_rate",
+        "target_move_percent",
+        "target_skill",
+        "trigger_summoner",
+        "defbreak_rate",
+        "extra_defbreak",
+        "hit_type",
+        "is_ricochet",
+        "is_shield",
+        "fix_damage",
+        "ui_control"
+    ]
+},
+{
+    "name": "enemy_character_type",
+    "fields": [
+        "id",
+        "type",
+        "name",
+        "enemy_info",
+        "code",
+        "maxlife",
+        "pow",
+        "hit",
+        "dodge",
+        "range",
+        "speed",
+        "number",
+        "angle",
+        "armor_piercing",
+        "armor",
+        "shield",
+        "rate",
+        "boss_hp",
+        "def",
+        "def_break",
+        "debuff_resistance",
+        "level",
+        "character",
+        "special_attack",
+        "normal_attack",
+        "passive_skill",
+        "effect_ratio",
+        "unable_buff_type",
+        "able_buff_id",
+        "voice",
+        "deployment_scale",
+        "recommend_description",
+        "hit_point",
+        "offset",
+        "lifebar_offset",
+        "enemy_illustration_id",
+        "location_offset"
+    ]
+},
+{
+    "name": "enemy_standard_attribute",
+    "fields": [
+        "level",
+        "maxlife",
+        "pow",
+        "dodge",
+        "hit",
+        "armor_piercing",
+        "armor",
+        "shield",
+        "def",
+        "def_break"
+    ]
+},
+{
+    "name": "summoner",
+    "fields": [
+        "id",
+        "name",
+        "code",
+        "hp",
+        "pow",
+        "hit",
+        "dodge",
+        "range",
+        "def",
+        "def_percent",
+        "def_break",
+        "speed",
+        "number",
+        "angle",
+        "armor_piercing",
+        "armor",
+        "crit_hit",
+        "shield",
+        "rate",
+        "debuff_resistance",
+        "level",
+        "special_attack",
+        "normal_attack",
+        "passive_skill",
+        "dynamic_passive_skill",
+        "unable_buff_id",
+        "unable_buff_type",
+        "scale",
+        "start_offset",
+        "camp",
+        "is_stay",
+        "is_hp_showed",
+        "is_damage_showed",
+        "is_damage_source",
+        "is_sangvis",
+        "phase_duration"
+    ]
+},
+{
+    "name": "battle_trigger",
+    "fields": [
+        "id",
+        "type",
+        "target",
+        "parameter",
+        "buff_id",
+        "is_buff_type"
+    ]
+},
+{
+    "name": "battle_target_select_ai",
+    "fields": [
+        "id",
+        "description",
+        "target_type",
+        "target_number",
+        "target_priority",
+        "select_order",
+        "is_ascend_order",
+        "is_ingore_range",
+        "is_search_all",
+        "list_ranking",
+        "target_buff_id",
+        "target_parameter",
+        "buff_trigger_type",
+        "is_buff_type"
+    ]
+},
+{
+    "name": "spot_buff_config",
+    "fields": [
+        "id",
+        "name",
+        "code",
+        "type",
+        "vision_buff",
+        "no_airborne",
+        "grow_enemy_pool",
+        "no_entry"
+    ]
+},
+{
+    "name": "special_spot_config",
+    "fields": [
+        "id",
+        "name",
+        "description",
+        "code",
+        "priority",
+        "duration_type",
+        "duration_time",
+        "special_spot_config_id",
+        "mission_hurt_config_id",
+        "mission_buff_config_id",
+        "detect_target_type",
+        "detect_range",
+        "effect_target_type",
+        "effect_spotbelong_type",
+        "effect_range_type",
+        "effect_range",
+        "side_type",
+        "conflict_type",
+        "conditions_type",
+        "conditions_time",
+        "conditions_count",
+        "skill_config_id_on_birth",
+        "skill_config_id_on_death",
+        "death_effect_target_type",
+        "death_clear_spot",
+        "effect_birth",
+        "effect_death",
+        "effect_duration",
+        "effect_process_star",
+        "effect_process_end",
+        "effect_process_duration",
+        "effect_conditions",
+        "effect_conditions_type",
+        "spot_buff_config_id",
+        "pref_code",
+        "is_still_alive"
+    ]
+},
+{
+    "name": "mission_hurt_config",
+    "fields": [
+        "id",
+        "name",
+        "target_type",
+        "type",
+        "is_number",
+        "life_type",
+        "value",
+        "hostage_value",
+        "is_armor",
+        "effect_birth",
+        "effect_process_star",
+        "effect_process_end",
+        "effect_process_duration",
+        "defender_value"
+    ]
+},
+{
+    "name": "carnival_task_type",
+    "fields": [
+        "id",
+        "type",
+        "title",
+        "content",
+        "function_control_id"
+    ]
+},
+{
+    "name": "bingo_task_type",
+    "fields": [
+        "id",
+        "task_type",
+        "title",
+        "content",
+        "function_control_id"
+    ]
+},
+{
+    "name": "enemy_team",
+    "fields": [
+        "id",
+        "reward_gun_pool",
+        "equip_s_probability",
+        "draw_event_s_id",
+        "enemy_leader",
+        "if_stay",
+        "correction_belong",
+        "correction_turn",
+        "limit_guns",
+        "limit_equips",
+        "ai",
+        "ai_content",
+        "enemy_type_display",
+        "use_building",
+        "use_building_skill",
+        "team_confrontfun_pic",
+        "team_confrontfun_des",
+        "effect_ext",
+        "targettrain_cancollect",
+        "fight_type",
+        "type_coef"
+    ]
+},
+{
+    "name": "battle_formula",
+    "fields": [
+        "id",
+        "formula"
+    ]
+},
+{
+    "name": "live2d_motions",
+    "fields": [
+        "id",
+        "type",
+        "motion_name",
+        "touch_area",
+        "hold_time",
+        "probability",
+        "voice",
+        "text",
+        "expression",
+        "face_motion",
+        "name",
+        "camera",
+        "is_hurt",
+        "level",
+        "is_interrupt",
+        "delay",
+        "next_motions",
+        "voice_code"
+    ]
+},
+{
+    "name": "equip",
+    "fields": [
+        "id",
+        "name",
+        "description",
+        "rank",
+        "category",
+        "type",
+        "pow",
+        "hit",
+        "dodge",
+        "speed",
+        "rate",
+        "critical_harm_rate",
+        "critical_percent",
+        "armor_piercing",
+        "armor",
+        "shield",
+        "damage_amplify",
+        "damage_reduction",
+        "night_view_percent",
+        "bullet_number_up",
+        "skill_effect_per",
+        "skill_effect",
+        "slow_down_percent",
+        "slow_down_rate",
+        "slow_down_time",
+        "dot_percent",
+        "dot_damage",
+        "dot_time",
+        "retire_mp",
+        "retire_ammo",
+        "retire_mre",
+        "retire_part",
+        "code",
+        "develop_duration",
+        "company",
+        "skill_level_up",
+        "fit_guns",
+        "equip_introduction",
+        "powerup_mp",
+        "powerup_ammo",
+        "powerup_mre",
+        "powerup_part",
+        "exclusive_rate",
+        "bonus_type",
+        "skill",
+        "passive_skill",
+        "max_level",
+        "auto_select_id",
+        "equip_group_id",
+        "is_addition",
+        "is_show",
+        "obtain_ids",
+        "sp_description"
+    ]
+},
+{
+    "name": "auto_mission",
+    "fields": [
+        "mission_id",
+        "team_effect",
+        "month_team_count",
+        "team_count",
+        "mp",
+        "ammo",
+        "mre",
+        "part",
+        "duration",
+        "experience",
+        "expect_gun_level",
+        "get_gun_num",
+        "gun_n_pool",
+        "gun_1_pool",
+        "limit_guns",
+        "get_equip_num",
+        "equip_n_pool",
+        "equip_1_pool",
+        "limit_equips",
+        "draw_event_id"
+    ]
+},
+{
+    "name": "theater",
+    "fields": [
+        "id",
+        "name",
+        "type",
+        "gauge",
+        "area",
+        "formation_limit",
+        "ssoc_limit",
+        "hoc_formation_number",
+        "hoc_limit",
+        "theater_event_id",
+        "rank",
+        "tips",
+        "code",
+        "reinforce_coef",
+        "background_mask",
+        "bgm",
+        "advantage_bonus",
+        "mask_offset",
+        "boss_bgm",
+        "occupied_prize",
+        "occupied_prize_display"
+    ]
+},
+{
+    "name": "theater_area",
+    "fields": [
+        "id",
+        "name",
+        "fight_type",
+        "type_coef",
+        "success_type_condition",
+        "basic_score",
+        "fight_environment_group",
+        "is_enemy_random",
+        "theater_spare_gun_num",
+        "theater_spare_fairy_num",
+        "theater_spare_sangvis_cost",
+        "assist_npc",
+        "assist_squad",
+        "assist_fairy",
+        "boss_score_coef",
+        "boss_score_display",
+        "start_score",
+        "end_score",
+        "type",
+        "construction",
+        "enemy_group",
+        "enemy_lv",
+        "enemy_score",
+        "occupied_enemy_lv",
+        "occupied_enemy_score",
+        "boss",
+        "occupied_boss_score",
+        "score_limit",
+        "advantage_gun",
+        "material_item",
+        "battle_background",
+        "theater_id",
+        "display_length",
+        "description",
+        "difficulty",
+        "area_mission_id",
+        "advantage_sangvis",
+        "advantage_skill",
+        "advantage_desc"
+    ]
+},
+{
+    "name": "theater_construction",
+    "fields": [
+        "id",
+        "name",
+        "group_id",
+        "lv",
+        "description",
+        "code",
+        "material_rate",
+        "construction_pt",
+        "effect",
+        "area_id",
+        "material_item",
+        "material_number"
+    ]
+},
+{
+    "name": "theater_event",
+    "fields": [
+        "id",
+        "name",
+        "start_time",
+        "end_time",
+        "close_time",
+        "banner",
+        "primary_theater",
+        "core_theater",
+        "ap_recover",
+        "opening_time",
+        "pt_gift",
+        "background",
+        "gift_background",
+        "gift_figure"
+    ]
+},
+{
+    "name": "story_util",
+    "fields": [
+        "id",
+        "mission_id",
+        "description",
+        "scripts",
+        "campaign",
+        "bgm",
+        "title",
+        "is_util",
+        "start",
+        "round",
+        "point",
+        "first",
+        "mid",
+        "end",
+        "fail",
+        "step_start_story",
+        "step_end_story"
+    ]
+},
+{
+    "name": "trigger_index",
+    "fields": [
+        "id",
+        "type",
+        "special_spot_condition",
+        "mission_buff_condition",
+        "person_condition"
+    ]
+},
+{
+    "name": "mission_skill_config",
+    "fields": [
+        "id",
+        "name",
+        "code",
+        "description",
+        "lvup_description",
+        "skill_group_id",
+        "level",
+        "train_coin_type",
+        "train_coin_number",
+        "skill_up_time",
+        "spot_type",
+        "spot_belong",
+        "spot_echelon",
+        "cd_time",
+        "cd_time_type",
+        "consumption",
+        "start_range",
+        "is_night",
+        "data_pool",
+        "is_airborne",
+        "airborne_mission_buff_config_id",
+        "effect_cast",
+        "effect_self",
+        "effect_target",
+        "trigger_id",
+        "target_id",
+        "special_spot_add",
+        "special_spot_minus",
+        "mission_buff_add",
+        "mission_buff_minus",
+        "subsidiary_mission_skill",
+        "is_manual",
+        "allyteam_summoner",
+        "ap_cost",
+        "consumption_item",
+        "drop_item",
+        "fun_game_type",
+        "fun_game_name",
+        "fun_game_result_sub"
+    ]
+},
+{
+    "name": "mission_mapped",
+    "fields": [
+        "id",
+        "mapped_missions"
+    ]
+},
+{
+    "name": "skin",
+    "fields": [
+        "id",
+        "name",
+        "extra",
+        "fit_gun",
+        "ai",
+        "voice",
+        "is_hidden",
+        "substitute_voice",
+        "dialog",
+        "note",
+        "explore_tag",
+        "gift_position",
+        "illustrator_cv",
+        "order",
+        "class_id"
+    ]
+},
+{
+    "name": "extra_spine",
+    "fields": [
+        "id",
+        "name",
+        "spine_code",
+        "scale",
+        "ai",
+        "explore_tag"
+    ]
+},
+{
+    "name": "explore_script",
+    "fields": [
+        "id",
+        "type",
+        "code"
+    ]
+},
+{
+    "name": "explore_affair_client",
+    "fields": [
+        "id",
+        "area_id",
+        "weight",
+        "tag_weight",
+        "content",
+        "necessary_num",
+        "background",
+        "script_type"
+    ]
+},
+{
+    "name": "explore_area",
+    "fields": [
+        "id",
+        "name",
+        "background"
+    ]
+},
+{
+    "name": "explore_destination",
+    "fields": [
+        "id",
+        "area_id",
+        "background"
+    ]
+},
+{
+    "name": "explore_item",
+    "fields": [
+        "id",
+        "explore_time_down",
+        "mid_reward_up",
+        "reward1_up",
+        "area_id_up"
+    ]
+},
+{
+    "name": "explore_mall",
+    "fields": [
+        "id",
+        "type",
+        "prize_id",
+        "cost",
+        "quota",
+        "clear_cycle",
+        "function_control_id",
+        "start_time",
+        "end_time",
+        "is_new"
+    ]
+},
+{
+    "name": "explore_time_type",
+    "fields": [
+        "id",
+        "duration",
+        "reward_item_type",
+        "mp",
+        "ammo",
+        "mre",
+        "part",
+        "draw_event_id"
+    ]
+},
+{
+    "name": "theater_effect",
+    "fields": [
+        "id",
+        "name",
+        "description",
+        "icon",
+        "duration",
+        "type",
+        "formation_number",
+        "ssoc_number",
+        "hoc_number",
+        "spare_gun_num",
+        "spare_sangvis_cost",
+        "spare_fairy_num"
+    ]
+},
+{
+    "name": "battle_action_config",
+    "fields": [
+        "id",
+        "name",
+        "action_order",
+        "action_delay",
+        "action_playspeed",
+        "creation_order",
+        "creation_delay",
+        "creation_afterdeath",
+        "sound_order",
+        "sound_delay",
+        "effect_order",
+        "effect_delay",
+        "effect_duration",
+        "stop_time_speed",
+        "stop_time_delay",
+        "stop_time_duration",
+        "move_order",
+        "move_delay",
+        "summon_order",
+        "summon_delay",
+        "voice_order",
+        "voice_delay",
+        "scene_order",
+        "scene_play_speed",
+        "scene_delay",
+        "scene_transition",
+        "avg_order",
+        "avg_delay",
+        "bgm_order",
+        "bgm_delay",
+        "camera_order",
+        "camera_delay",
+        "camera_duration"
+    ]
+},
+{
+    "name": "theater_selection",
+    "fields": [
+        "id",
+        "name",
+        "description",
+        "scout_material_number",
+        "scout_material",
+        "scout_pt"
+    ]
+},
+{
+    "name": "explore_affair_server",
+    "fields": [
+        "id",
+        "content",
+        "background",
+        "script_type"
+    ]
+},
+{
+    "name": "ally_team",
+    "fields": [
+        "id",
+        "code",
+        "ui_image_icon",
+        "name",
+        "guns",
+        "fairy",
+        "enemy_team_id",
+        "initial_type",
+        "ai",
+        "ai_content",
+        "betray_condition",
+        "betray_number",
+        "betray_result",
+        "transform_condition",
+        "transform_number",
+        "transform_result",
+        "icon",
+        "betray_result_enemy",
+        "squad",
+        "building",
+        "enemy_panel_type",
+        "is_special_ai",
+        "no_battle_damage",
+        "duration",
+        "sangvis",
+        "betray_result_guns",
+        "betray_result_sangvis"
+    ]
+},
+{
+    "name": "theater_incident",
+    "fields": [
+        "id",
+        "name",
+        "description",
+        "icon",
+        "type",
+        "timing",
+        "scout_selection_id",
+        "scout_majority_coef",
+        "scout_manority_coef",
+        "is_active",
+        "theater_event_id"
+    ]
+},
+{
+    "name": "manual_ui",
+    "fields": [
+        "id",
+        "code_a",
+        "description_a",
+        "description_b",
+        "description_c",
+        "code_b",
+        "is_manual_target",
+        "use_fairy_ui"
+    ]
+},
+{
+    "name": "dorm_ai",
+    "fields": [
+        "id",
+        "actions",
+        "up_rate",
+        "min_time",
+        "time_weight",
+        "move_speed",
+        "interact_point",
+        "interact_point_offset"
+    ]
+},
+{
+    "name": "dorm_action",
+    "fields": [
+        "id",
+        "spine_name",
+        "interact_type",
+        "interact_point_type",
+        "emoji",
+        "min_decorate",
+        "max_decorate",
+        "min_favor",
+        "max_favor",
+        "action_voice",
+        "action_sound",
+        "action_bgm",
+        "shadow_exist",
+        "move_speed",
+        "next_action",
+        "no_vertical_motion",
+        "is_married",
+        "furiniture_action_interact",
+        "default_action"
+    ]
+},
+{
+    "name": "theater_reward",
+    "fields": [
+        "id",
+        "type",
+        "prize_id",
+        "rank",
+        "theater_event_id"
+    ]
+},
+{
+    "name": "mission_buff_config",
+    "fields": [
+        "id",
+        "name",
+        "description",
+        "code",
+        "type",
+        "duration_type",
+        "duration_time",
+        "limit_buff",
+        "exp_buff",
+        "is_resource_buff",
+        "vision_buff",
+        "cannot_move",
+        "battle_skill_config_id",
+        "property_type",
+        "property_data_pool",
+        "special_spot_config_id",
+        "conditions_type",
+        "conditions_time",
+        "birth_effect",
+        "effect_process_star",
+        "effect_process_end",
+        "effect_process_duration",
+        "manual_ui_code",
+        "ammo_mre_reduce",
+        "free_ap_move",
+        "extra_ammo_mre",
+        "conflict_type",
+        "priority",
+        "carry_mission_skill",
+        "sangvis_chip_id",
+        "ext_move"
+    ]
+},
+{
+    "name": "recommended_formula",
+    "fields": [
+        "id",
+        "develop_type",
+        "type",
+        "name",
+        "en_name",
+        "content",
+        "background",
+        "mp",
+        "ammo",
+        "mre",
+        "part",
+        "type_rarity",
+        "preview",
+        "is_produce",
+        "produce_mp",
+        "produce_ammo",
+        "produce_mre",
+        "produce_part",
+        "produce_preview"
+    ]
+},
+{
+    "name": "achievement",
+    "fields": [
+        "identity",
+        "type",
+        "count",
+        "user_exp",
+        "mp",
+        "ammo",
+        "mre",
+        "part",
+        "core",
+        "gem",
+        "gun_id",
+        "item_ids",
+        "equip_ids",
+        "furniture",
+        "gift",
+        "title",
+        "content",
+        "type_sort",
+        "sort",
+        "icon_code",
+        "prize_id",
+        "mission_id",
+        "condition",
+        "commander_title",
+        "unlock_function"
+    ]
+},
+{
+    "name": "friend_cosmetic",
+    "fields": [
+        "id",
+        "item_id",
+        "sub_type",
+        "mp",
+        "ammo",
+        "mre",
+        "part",
+        "gem",
+        "item_ids",
+        "onsale",
+        "in_gasha",
+        "code",
+        "order",
+        "rarity",
+        "decompose_gift",
+        "skin",
+        "is_live2d",
+        "filter_type",
+        "frame_id",
+        "logo_code"
+    ]
+},
+{
+    "name": "furniture",
+    "fields": [
+        "id",
+        "name",
+        "classes",
+        "type",
+        "position",
+        "space",
+        "deco_rate",
+        "decompose_gift",
+        "description",
+        "code",
+        "texture_type",
+        "sorting",
+        "offset",
+        "rotate",
+        "interact_point",
+        "interact_point_offset",
+        "furniture_bgm",
+        "touch_area",
+        "bonus_id",
+        "ai"
+    ]
+},
+{
+    "name": "furniture_interact_point",
+    "fields": [
+        "id",
+        "gun_action",
+        "is_cover",
+        "sorting",
+        "furiniture_action_interact",
+        "direction",
+        "bone_name",
+        "initial_angle",
+        "end_action",
+        "need_action",
+        "group"
+    ]
+},
+{
+    "name": "mission_win_type_config",
+    "fields": [
+        "id",
+        "type",
+        "arguments",
+        "extra_language",
+        "is_hidden",
+        "is_show_count"
+    ]
+},
+{
+    "name": "mission_event",
+    "fields": [
+        "id",
+        "type",
+        "mission_campaign",
+        "draw_event_id",
+        "start_time",
+        "end_time",
+        "init_mission_id",
+        "function_control_id",
+        "open_mission",
+        "open_time",
+        "mission_event_opentime_white_list"
+    ]
+},
+{
+    "name": "tutorial_guide",
+    "fields": [
+        "id",
+        "type",
+        "child_ids",
+        "title",
+        "title_code",
+        "sub_title",
+        "tutorial_manual_id",
+        "rank"
+    ]
+},
+{
+    "name": "tutorial_manual",
+    "fields": [
+        "id",
+        "type",
+        "child_ids",
+        "title",
+        "sub_title",
+        "code",
+        "content",
+        "function_control_id",
+        "goto_page"
+    ]
+},
+{
+    "name": "guild_flag",
+    "fields": [
+        "id",
+        "type",
+        "pattern_code",
+        "texture",
+        "color"
+    ]
+},
+{
+    "name": "guild_level",
+    "fields": [
+        "lv",
+        "exp",
+        "max_member_num",
+        "max_vice_num",
+        "unlock_empty_room_id",
+        "unlock_room_type_id",
+        "title",
+        "title_medal_code"
+    ]
+},
+{
+    "name": "prize",
+    "fields": [
+        "id",
+        "name",
+        "user_exp",
+        "mp",
+        "ammo",
+        "mre",
+        "part",
+        "core",
+        "gem",
+        "gem_pay",
+        "gun_id",
+        "sangvis",
+        "item_ids",
+        "furniture",
+        "gift",
+        "equip_ids",
+        "coins",
+        "skin",
+        "content",
+        "send_limit",
+        "icon",
+        "bp_pay",
+        "fairy_ids",
+        "chip",
+        "commander_uniform"
+    ]
+},
+{
+    "name": "mall",
+    "fields": [
+        "id",
+        "type",
+        "sort",
+        "item_ids",
+        "gem",
+        "mp",
+        "ammo",
+        "mre",
+        "part",
+        "bp_pay",
+        "skin",
+        "gift",
+        "gemprice",
+        "original_price",
+        "pointprice",
+        "if_cheap",
+        "quota",
+        "giftbag_name",
+        "event_code",
+        "icon",
+        "daily_quota",
+        "tips",
+        "discount",
+        "sale_starttime",
+        "sale_endtime",
+        "label",
+        "prize_id",
+        "pay_type",
+        "itemprice",
+        "on_sale_days",
+        "price_up",
+        "classification_id",
+        "description"
+    ]
+},
+{
+    "name": "commander_class",
+    "fields": [
+        "id",
+        "name",
+        "description",
+        "group_id",
+        "code",
+        "bonus_plastic",
+        "skill_id",
+        "path",
+        "is_class",
+        "des_year",
+        "source",
+        "source_description"
+    ]
+},
+{
+    "name": "commander_emoji",
+    "fields": [
+        "id",
+        "content",
+        "is_show",
+        "required_level",
+        "required_comfort"
+    ]
+},
+{
+    "name": "commander_uniform",
+    "fields": [
+        "id",
+        "name",
+        "description",
+        "code",
+        "icon",
+        "type",
+        "gender",
+        "uniform_class",
+        "color_normal",
+        "color_0",
+        "color_1",
+        "color_2",
+        "color_3",
+        "color_4",
+        "skill_id",
+        "bone_name",
+        "rotation",
+        "scale",
+        "position",
+        "color_icon_id"
+    ]
+},
+{
+    "name": "function_skill_config",
+    "fields": [
+        "id",
+        "name",
+        "level",
+        "group_id",
+        "code",
+        "description",
+        "arguments",
+        "max_level",
+        "is_show",
+        "type",
+        "function_skill"
+    ]
+},
+{
+    "name": "commander_color",
+    "fields": [
+        "id",
+        "icon_colors"
+    ]
+},
+{
+    "name": "draw_event",
+    "fields": [
+        "id",
+        "item_id",
+        "type",
+        "start_time",
+        "end_time",
+        "drop_ids",
+        "title_res",
+        "amount_coordinate",
+        "bg_res",
+        "is_mail",
+        "mail_type",
+        "is_show",
+        "clear_cycle",
+        "clear_time",
+        "prize_skip",
+        "mission_show_prize",
+        "use_animation",
+        "goto_to_mall",
+        "can_ten_draws",
+        "can_get_rewards",
+        "goto_page",
+        "extra_bonus",
+        "bonus_percent"
+    ]
+},
+{
+    "name": "gift_item",
+    "fields": [
+        "id",
+        "name",
+        "type",
+        "rank",
+        "favor",
+        "fit_gun",
+        "skin",
+        "poster",
+        "code",
+        "bonus_description",
+        "description",
+        "is_hidden",
+        "exp",
+        "profile_pic",
+        "item_access",
+        "detail_introduction",
+        "sort"
+    ]
+},
+{
+    "name": "unit_character",
+    "fields": [
+        "id",
+        "name",
+        "character_des"
+    ]
+},
+{
+    "name": "team_ai",
+    "fields": [
+        "id",
+        "force_id",
+        "ai_type",
+        "name",
+        "description",
+        "pic",
+        "color"
+    ]
+},
+{
+    "name": "enemy_illustration",
+    "fields": [
+        "id",
+        "name",
+        "type",
+        "code",
+        "introduce",
+        "forces",
+        "if_capture",
+        "pow_rank",
+        "life_rank",
+        "hit_rank",
+        "dodge_rank",
+        "rate_rank",
+        "armor_rank",
+        "speed_rank",
+        "range_rank",
+        "counter",
+        "character",
+        "enemy_skill",
+        "launch_time",
+        "extra",
+        "spine_scale",
+        "org_id",
+        "related_story_id"
+    ]
+},
+{
+    "name": "fetter_skill",
+    "fields": [
+        "id",
+        "name",
+        "code",
+        "description",
+        "gun_group",
+        "gun",
+        "type",
+        "skill1",
+        "skill2",
+        "normal_attack",
+        "passive_skill",
+        "dynamic_passive_skill",
+        "active_trigger"
+    ]
+},
+{
+    "name": "enemy_illustration_skill",
+    "fields": [
+        "id",
+        "name",
+        "description"
+    ]
+},
+{
+    "name": "sangvis_chip",
+    "fields": [
+        "id",
+        "name",
+        "unlock_furniture_level",
+        "type",
+        "equip_boss",
+        "dev_specialitem_num",
+        "code",
+        "des",
+        "dev_battery_num",
+        "dev_time",
+        "active_special_skill",
+        "active_special_skill_cd",
+        "active_special_skill_cost",
+        "active_mission_skill",
+        "chip_skill",
+        "passive_mission_skill",
+        "special_skill_parameter",
+        "night_view_percent",
+        "dev_num",
+        "dev_item_value"
+    ]
+},
+{
+    "name": "sangvis",
+    "fields": [
+        "id",
+        "name",
+        "en_name",
+        "code",
+        "introduce",
+        "dialogue",
+        "extra",
+        "en_introduce",
+        "forces",
+        "type",
+        "character",
+        "formation",
+        "resolution",
+        "shape_scale",
+        "ap_cost",
+        "ap_add",
+        "rank",
+        "skill1",
+        "skill2_type",
+        "skill2",
+        "skill3",
+        "skill_advance",
+        "skill_resolution",
+        "passive_skill2",
+        "dynamic_passive_skill",
+        "normal_attack",
+        "baseammo",
+        "basemre",
+        "ammo_add_withnumber",
+        "mre_add_withnumber",
+        "ratio_hp",
+        "ratio_pow",
+        "ratio_rate",
+        "ratio_hit",
+        "ratio_dodge",
+        "ratio_armor",
+        "armor_piercing",
+        "crit",
+        "crit_dmg",
+        "eat_ratio",
+        "ratio_speed",
+        "special",
+        "attack_range_type",
+        "assist_attack_range",
+        "ratio_range",
+        "search_range",
+        "effect_grid_effect",
+        "type_chip1",
+        "type_chip2",
+        "type_chip3",
+        "illustration_id",
+        "ai",
+        "is_additional",
+        "launch_time",
+        "obtain_ids",
+        "display_enemy_team",
+        "picture_offset",
+        "picture_scale",
+        "dorm_scale",
+        "org_id"
+    ]
+},
+{
+    "name": "sangvis_advance",
+    "fields": [
+        "lv",
+        "star1",
+        "star2",
+        "star3",
+        "unlock_lv",
+        "advance_hp",
+        "advance_pow",
+        "advance_rate",
+        "advance_hit",
+        "advance_dodge",
+        "advance_armor"
+    ]
+},
+{
+    "name": "sangvis_resolution",
+    "fields": [
+        "id",
+        "group_id",
+        "lv",
+        "unlock_num",
+        "if_skill_up",
+        "resolution_number",
+        "resolution_hp",
+        "resolution_pow",
+        "resolution_rate",
+        "resolution_hit",
+        "resolution_dodge",
+        "resolution_armor",
+        "resolution_armor_piercing",
+        "resolution_crit",
+        "resolution_crit_dmg",
+        "resolution_speed",
+        "resolution_effect",
+        "effect_grid_effect",
+        "ap_add",
+        "cost_reduce",
+        "skill1",
+        "skill2",
+        "skill3",
+        "skill_advance"
+    ]
+},
+{
+    "name": "sangvis_type",
+    "fields": [
+        "id",
+        "name",
+        "basic_hp",
+        "basic_pow",
+        "basic_rate",
+        "basic_speed",
+        "basic_hit",
+        "basic_dodge",
+        "basic_armor",
+        "mp_fix_ratio",
+        "part_fix_ratio",
+        "fix_time_ratio",
+        "skill_advance_lv",
+        "pic_advance_lv",
+        "daily_successr",
+        "author_successr",
+        "default_advance_lv",
+        "exchange_num",
+        "repair_cost",
+        "trans_num",
+        "skills_max_lv"
+    ]
+},
+{
+    "name": "sangvis_chip_skill",
+    "fields": [
+        "id",
+        "trigger_target_type",
+        "trigger_range",
+        "trigger_formula",
+        "target_type",
+        "target_range",
+        "battle_skill",
+        "code"
+    ]
+},
+{
+    "name": "sangvis_gasha",
+    "fields": [
+        "id",
+        "name",
+        "type",
+        "start_time",
+        "end_time",
+        "tab_code",
+        "banner",
+        "refresh_rate",
+        "daily_price",
+        "author_price",
+        "gasha_reward_ids"
+    ]
+},
+{
+    "name": "sangvis_gasha_reward",
+    "fields": [
+        "id",
+        "sangvis_id",
+        "reward_type",
+        "single_num_weight"
+    ]
+},
+{
+    "name": "sangvis_sign",
+    "fields": [
+        "id",
+        "name"
+    ]
+},
+{
+    "name": "sangvis_charavoice",
+    "fields": [
+        "id",
+        "name",
+        "code",
+        "is_hidden",
+        "is_fetter"
+    ]
+},
+{
+    "name": "sangvis_character_type",
+    "fields": [
+        "id",
+        "name",
+        "description"
+    ]
+},
+{
+    "name": "sangvis_exchange_mall",
+    "fields": [
+        "id",
+        "cost_item",
+        "cost_num",
+        "prize_id",
+        "quota",
+        "start_time",
+        "end_time"
+    ]
+},
+{
+    "name": "sangvis_exp",
+    "fields": [
+        "lv",
+        "exp"
+    ]
+},
+{
+    "name": "mission_win_step_control",
+    "fields": [
+        "id",
+        "win_step",
+        "lose_step",
+        "next_id",
+        "lock_id",
+        "related_missionkey"
+    ]
+},
+{
+    "name": "sangvis_in_ally",
+    "fields": [
+        "id",
+        "sangvis_id",
+        "sangvis_level",
+        "life",
+        "sangvis_advance",
+        "sangvis_shape_n",
+        "sangvis_resolution_level",
+        "skill1",
+        "skill2",
+        "skill3",
+        "skill_advance",
+        "chip1",
+        "chip2",
+        "favor"
+    ]
+},
+{
+    "name": "mail_content",
+    "fields": [
+        "id",
+        "title",
+        "content"
+    ]
+},
+{
+    "name": "auto_formation",
+    "fields": [
+        "id",
+        "name",
+        "sangvis_id",
+        "description",
+        "reco_location",
+        "reco_gun_1",
+        "reco_gun_2",
+        "reco_gun_3",
+        "reco_gun_4",
+        "reco_gun_5",
+        "reco_gun_6",
+        "reco_gun_7",
+        "reco_gun_8",
+        "reco_gun_9"
+    ]
+},
+{
+    "name": "fetter",
+    "fields": [
+        "id",
+        "name",
+        "actor",
+        "code",
+        "milestone1",
+        "milestone1_reward",
+        "milestone2",
+        "milestone2_reward",
+        "milestone3",
+        "milestone3_reward",
+        "milestone4",
+        "milestone4_reward",
+        "milestone5",
+        "milestone5_reward"
+    ]
+},
+{
+    "name": "fetter_story",
+    "fields": [
+        "id",
+        "fetter_id",
+        "actor",
+        "milestone",
+        "reward",
+        "name",
+        "description"
+    ]
+},
+{
+    "name": "fetter_bounty",
+    "fields": [
+        "id",
+        "fetter_id",
+        "type",
+        "value",
+        "point",
+        "name",
+        "description"
+    ]
+},
+{
+    "name": "organization",
+    "fields": [
+        "id",
+        "parent_id",
+        "name",
+        "description"
+    ]
+},
+{
+    "name": "organization_bounty",
+    "fields": [
+        "id",
+        "org_id",
+        "reward",
+        "quantity",
+        "organization_level"
+    ]
+},
+{
+    "name": "fairy",
+    "fields": [
+        "id",
+        "name",
+        "code",
+        "description",
+        "introduce",
+        "type",
+        "pow",
+        "hit",
+        "dodge",
+        "armor",
+        "critical_harm_rate",
+        "grow",
+        "proportion",
+        "skill_id",
+        "quality_exp",
+        "quality_need_number",
+        "category",
+        "develop_duration",
+        "retiremp",
+        "retireammo",
+        "retiremre",
+        "retirepart",
+        "powerup_mp",
+        "powerup_ammo",
+        "powerup_mre",
+        "powerup_part",
+        "armor_piercing",
+        "ai",
+        "is_additional",
+        "avatar_offset",
+        "avatar_scale",
+        "picture_offset",
+        "picture_scale",
+        "org_id",
+        "obtain_ids",
+        "skill_id_mod",
+        "passive_skill_mod",
+        "pow_mod",
+        "hit_mod",
+        "dodge_mod",
+        "armor_mod",
+        "critical_harm_rate_mod",
+        "if_mod",
+        "mod_exp"
+    ]
+},
+{
+    "name": "mission_targettrain",
+    "fields": [
+        "id",
+        "target_type",
+        "name",
+        "target_des",
+        "code",
+        "rank",
+        "rank_type",
+        "rank_inorder",
+        "hit_rank",
+        "hit_rank_type",
+        "hit_rank_inorder",
+        "difficult_level_limit",
+        "difficult_level",
+        "recommend_level",
+        "target_id",
+        "battle_timelimit",
+        "hp_is_re",
+        "is_time_limit",
+        "start_time",
+        "end_time",
+        "cost_type",
+        "cost_item",
+        "mp",
+        "ammo",
+        "mre",
+        "part",
+        "is_reward",
+        "prize_reward"
+    ]
+},
+{
+    "name": "mission_targettrain_battlesetting",
+    "fields": [
+        "difficult_level",
+        "dodge_level",
+        "dodge_default_level",
+        "guard_level",
+        "guard_default_level",
+        "shield_level",
+        "shield_default_level",
+        "forcefield_level",
+        "forcefield_default_level"
+    ]
+},
+{
+    "name": "mission_targettrain_enemy",
+    "fields": [
+        "id",
+        "name",
+        "des",
+        "power",
+        "recommend_power",
+        "enemy_team_id",
+        "log_fitter_id",
+        "log_fitter_name",
+        "code",
+        "fight_type",
+        "type_coef",
+        "fight_environment_group"
+    ]
+},
+{
+    "name": "equip_group",
+    "fields": [
+        "id",
+        "name",
+        "des",
+        "code",
+        "equip_unit",
+        "group_skill"
+    ]
+},
+{
+    "name": "mission_echo_info",
+    "fields": [
+        "id",
+        "mission_id",
+        "title",
+        "content",
+        "subtitle",
+        "interval",
+        "character"
+    ]
+},
+{
+    "name": "rank",
+    "fields": [
+        "id",
+        "name",
+        "type",
+        "sub_type",
+        "refresh",
+        "title",
+        "top_rewards",
+        "percentage_rewards",
+        "out_rewards",
+        "visable_rank",
+        "score_rewards",
+        "ranking_onlist_number",
+        "visable_count",
+        "rank_list_num",
+        "begin_show_time",
+        "end_show_time",
+        "prize_preview"
+    ]
+},
+{
+    "name": "mission_draw_bonus",
+    "fields": [
+        "draw_id",
+        "gun_bonus",
+        "gun_bonus_pct",
+        "sangvis_bonus",
+        "sangvis_bonus_pct",
+        "skin_bonus",
+        "skin_bonus_pct",
+        "equip_bonus",
+        "equip_bonus_pct"
+    ]
+},
+{
+    "name": "event_prize_level",
+    "fields": [
+        "id",
+        "name",
+        "type",
+        "value",
+        "condition",
+        "start_time",
+        "end_time",
+        "prize_start_time",
+        "prize_end_time",
+        "left_icon",
+        "background",
+        "notice_txt"
+    ]
+},
+{
+    "name": "bondage_lines",
+    "fields": [
+        "id",
+        "main_id",
+        "sub_id",
+        "lines_code",
+        "lines_txt"
+    ]
+},
+{
+    "name": "gun_charavoice",
+    "fields": [
+        "id",
+        "name",
+        "code",
+        "is_hidden",
+        "is_skin",
+        "is_fetter"
+    ]
+},
+{
+    "name": "guild_emoji",
+    "fields": [
+        "id",
+        "group",
+        "emoji_code",
+        "is_locked",
+        "prize",
+        "is_hide"
+    ]
+},
+{
+    "name": "guild_emoji_group",
+    "fields": [
+        "id",
+        "is_locked",
+        "icon_emoji_code",
+        "prize",
+        "is_hide"
+    ]
+},
+{
+    "name": "chat_fix_phrases",
+    "fields": [
+        "id",
+        "group",
+        "content",
+        "paras",
+        "type",
+        "type_name"
+    ]
+},
+{
+    "name": "chat_channel",
+    "fields": [
+        "id",
+        "name",
+        "if_input",
+        "is_fixed_phrases"
+    ]
+},
+{
+    "name": "item_access",
+    "fields": [
+        "id",
+        "name",
+        "carnival_goto_page_id",
+        "function_control_id"
+    ]
+},
+{
+    "name": "npc_charavoice",
+    "fields": [
+        "id",
+        "name",
+        "code",
+        "kalina_favor_lv",
+        "data",
+        "China_data",
+        "time"
+    ]
+},
+{
+    "name": "npc",
+    "fields": [
+        "id",
+        "name",
+        "code",
+        "title",
+        "ai",
+        "is_adjutant",
+        "unlock_text",
+        "mission_id",
+        "item_id",
+        "skin_code",
+        "voice_code",
+        "org_id",
+        "org_introduction"
+    ]
+},
+{
+    "name": "skin_class",
+    "fields": [
+        "id",
+        "theme_type",
+        "name"
+    ]
+},
+{
+    "name": "chess_gun_type",
+    "fields": [
+        "id",
+        "name",
+        "power",
+        "range",
+        "hp",
+        "ap",
+        "attack_times",
+        "armor",
+        "armor_piercing",
+        "gun_type_skill",
+        "attack_angle",
+        "passive_skill",
+        "ai_passive_skill"
+    ]
+},
+{
+    "name": "chess_camp_type",
+    "fields": [
+        "id",
+        "name",
+        "des",
+        "camp_skill",
+        "passive_skill",
+        "color",
+        "code"
+    ]
+},
+{
+    "name": "mall_classification",
+    "fields": [
+        "id",
+        "parent_id",
+        "sort",
+        "name",
+        "description"
+    ]
+},
+{
+    "name": "point_mall",
+    "fields": [
+        "id",
+        "type",
+        "gem_pay",
+        "gem",
+        "double_gem_pay",
+        "double_gem",
+        "mp",
+        "ammo",
+        "mre",
+        "part",
+        "icon",
+        "month_card_type",
+        "quota_num",
+        "prize_id",
+        "classification_id",
+        "description",
+        "clear_type",
+        "clear_parameter"
+    ]
+},
+{
+    "name": "chess_buff",
+    "fields": [
+        "id",
+        "name",
+        "code",
+        "description",
+        "max_tier",
+        "type",
+        "duration_type",
+        "duration",
+        "parameter",
+        "trigger_creation_id",
+        "creation_id",
+        "available_gun_type",
+        "ui_control"
+    ]
+},
+{
+    "name": "chess_chip",
+    "fields": [
+        "id",
+        "code",
+        "chip_up_exp",
+        "chip_group",
+        "level",
+        "name",
+        "description",
+        "cd_type",
+        "init_cd",
+        "cd",
+        "rank",
+        "number",
+        "skill_target_first",
+        "skill_target_second",
+        "use_stage",
+        "target_select_first",
+        "target_select_second",
+        "type",
+        "is_active",
+        "price",
+        "sell_price",
+        "experience",
+        "init_time",
+        "fit_gun_type",
+        "custom_type",
+        "show_ui",
+        "log_description",
+        "ai_skill",
+        "cutin_animation_duration"
+    ]
+},
+{
+    "name": "chess_chip_target_select",
+    "fields": [
+        "id",
+        "target_type",
+        "target_number",
+        "is_select",
+        "range",
+        "select_order",
+        "select_limit",
+        "select_type"
+    ]
+},
+{
+    "name": "chess_creation_perform",
+    "fields": [
+        "id",
+        "code",
+        "start_type",
+        "start_offset",
+        "destination_type",
+        "destination_offset",
+        "route_type",
+        "route_hight",
+        "speed",
+        "easing_type",
+        "spin_velocity",
+        "rotate",
+        "duration",
+        "perform_duration",
+        "is_tracing",
+        "scale",
+        "is_hide",
+        "trigger_creation",
+        "trigger_creation_delay",
+        "creation_type",
+        "sound_order",
+        "sound_delay",
+        "creation_direction"
+    ]
+},
+{
+    "name": "chess_enemy",
+    "fields": [
+        "id",
+        "code",
+        "name",
+        "power",
+        "range",
+        "hp",
+        "ap",
+        "attack_times",
+        "armor",
+        "armor_piercing",
+        "reward_chip_ids",
+        "chip",
+        "spine_direction",
+        "attack_angle",
+        "lifebar_offset"
+    ]
+},
+{
+    "name": "chess_skill",
+    "fields": [
+        "id",
+        "cd_type",
+        "init_cd",
+        "cd",
+        "duration",
+        "trigger",
+        "target_buff",
+        "self_buff",
+        "random_buff",
+        "hurt",
+        "heal",
+        "chip",
+        "dice",
+        "movement_type",
+        "movement_parameter",
+        "stage_change",
+        "perform_creation_id",
+        "effect_range",
+        "summoner",
+        "token",
+        "negative_skill_target",
+        "chip_ui_control",
+        "score",
+        "flight",
+        "action"
+    ]
+},
+{
+    "name": "chess_skill_trigger",
+    "fields": [
+        "id",
+        "type",
+        "target",
+        "parameter",
+        "parameter2"
+    ]
+},
+{
+    "name": "chess_spot",
+    "fields": [
+        "id",
+        "chess_mission_id",
+        "type",
+        "neighbor",
+        "player_order",
+        "next_jump_airport_point",
+        "next_jump_airport_direction",
+        "axial_coordinator_q",
+        "axial_coordinator_r",
+        "positive_direction",
+        "negative_direction",
+        "random_get",
+        "grow_enemy_pool",
+        "grow_enemy_pool_turn"
+    ]
+},
+{
+    "name": "chess_game_config",
+    "fields": [
+        "id",
+        "parameter_name",
+        "parameter_type",
+        "parameter_value"
+    ]
+},
+{
+    "name": "chess_map",
+    "fields": [
+        "id",
+        "name",
+        "code",
+        "default_unlock",
+        "unlock_item_id"
+    ]
+},
+{
+    "name": "chess_model",
+    "fields": [
+        "id",
+        "name",
+        "team_des",
+        "player_num",
+        "team_num",
+        "team_playerlimit",
+        "prize"
+    ]
+},
+{
+    "name": "chess_mission",
+    "fields": [
+        "id",
+        "name",
+        "chess_spotids",
+        "rotation",
+        "camera_height_range",
+        "camera_angle_h",
+        "camera_angle_l",
+        "random_enemy_pool",
+        "map_limit",
+        "map_id",
+        "global_limit",
+        "global_pos",
+        "mission_icon"
+    ]
+},
+{
+    "name": "mission_entrance_package",
+    "fields": [
+        "id",
+        "value"
+    ]
+},
+{
+    "name": "chess_creation_logic",
+    "fields": [
+        "perform_creation_id"
+    ]
+},
+{
+    "name": "chess_scorelevel",
+    "fields": [
+        "id",
+        "name",
+        "code",
+        "score_floor",
+        "score_ceilling",
+        "score_get",
+        "prize"
+    ]
+},
+{
+    "name": "chess_random_enemy",
+    "fields": [
+        "id",
+        "enemy_id",
+        "random_spot_id",
+        "launch_time_type",
+        "time"
+    ]
+},
+{
+    "name": "chess_random_spot",
+    "fields": [
+        "id",
+        "spot_effect"
+    ]
+},
+{
+    "name": "chess_selectframe",
+    "fields": [
+        "id",
+        "select_num",
+        "itemlanguage_id",
+        "code",
+        "des",
+        "preview"
+    ]
+},
+{
+    "name": "rouge_sk",
+    "fields": [
+        "id",
+        "skill_id",
+        "code",
+        "type_c",
+        "rank_c"
+    ]
+},
+{
+    "name": "chess_seasonevent",
+    "fields": [
+        "id",
+        "name",
+        "start_time",
+        "end_time",
+        "mission_id"
+    ]
+},
+{
+    "name": "fight_success_condition",
+    "fields": [
+        "id",
+        "name",
+        "type",
+        "desc",
+        "condition_coef",
+        "score_coef"
+    ]
+},
+{
+    "name": "chess_choice_stage",
+    "fields": [
+        "id",
+        "name",
+        "type",
+        "parameter",
+        "init_time",
+        "cd",
+        "code",
+        "description",
+        "probability"
+    ]
+},
+{
+    "name": "equip_type",
+    "fields": [
+        "type",
+        "name",
+        "category",
+        "code",
+        "fit_gun_type",
+        "des"
+    ]
+},
+{
+    "name": "equip_category",
+    "fields": [
+        "category",
+        "name",
+        "en_name",
+        "code"
+    ]
+},
+{
+    "name": "fight_environment_skill",
+    "fields": [
+        "id",
+        "name",
+        "desc",
+        "if_display",
+        "code",
+        "skill_group"
+    ]
+},
+{
+    "name": "fight_type",
+    "fields": [
+        "id",
+        "name",
+        "code",
+        "desc"
+    ]
+},
+{
+    "name": "chess_voice",
+    "fields": [
+        "id",
+        "situation",
+        "chip_group",
+        "is_show",
+        "surprise",
+        "code"
+    ]
+},
+{
+    "name": "squad_in_ally",
+    "fields": [
+        "id",
+        "squad_id",
+        "squad_level",
+        "cpu_level",
+        "squad_completion_level",
+        "rank",
+        "advanced_level",
+        "assist_damage",
+        "assist_reload",
+        "assist_hit",
+        "assist_def_break",
+        "damage",
+        "atk_speed",
+        "hit",
+        "def",
+        "skill1",
+        "skill2",
+        "skill3",
+        "skin"
+    ]
+},
+{
+    "name": "mission_effect_config",
+    "fields": [
+        "id",
+        "name",
+        "code",
+        "description",
+        "priority",
+        "duration",
+        "delay",
+        "size",
+        "sound",
+        "spine",
+        "if_starting",
+        "relative_position",
+        "offset",
+        "rotation_offset",
+        "is_focus",
+        "use_ease"
+    ]
+},
+{
+    "name": "career_quest",
+    "fields": [
+        "id",
+        "type",
+        "unlock_lv",
+        "unlock_ids",
+        "unlock_label",
+        "count",
+        "prize_id",
+        "title",
+        "content",
+        "unlock_course",
+        "new_type",
+        "grade_id",
+        "sort",
+        "condition",
+        "new_unlock_ids"
+    ]
+},
+{
+    "name": "career_quest_group",
+    "fields": [
+        "id",
+        "type",
+        "sub_type",
+        "title",
+        "sub_title",
+        "function_control_id"
+    ]
+},
+{
+    "name": "career_quest_grade",
+    "fields": [
+        "id",
+        "group",
+        "grade",
+        "name",
+        "description"
+    ]
+},
+{
+    "name": "fairy_talent",
+    "fields": [
+        "id",
+        "rank",
+        "type_id",
+        "name"
+    ]
+},
+{
+    "name": "fairy_talent_type",
+    "fields": [
+        "id",
+        "name"
+    ]
+},
+{
+    "name": "furniture_classes",
+    "fields": [
+        "id",
+        "name",
+        "rank",
+        "bonus_picture",
+        "k_bonus",
+        "bonus_number",
+        "description",
+        "bonus_description",
+        "code",
+        "is_showed",
+        "placement",
+        "years"
+    ]
+},
+{
+    "name": "fight_environment_config",
+    "fields": [
+        "id",
+        "transform_type",
+        "transform_number",
+        "transform_result_add",
+        "transform_result_delete"
+    ]
+},
+{
+    "name": "commander_ranking_scores",
+    "fields": [
+        "id",
+        "code",
+        "type_id",
+        "basic_scores",
+        "k_slopes",
+        "x_counts"
+    ]
+},
+{
+    "name": "commander_ranking_types",
+    "fields": [
+        "id",
+        "class_id",
+        "title",
+        "desc",
+        "weight",
+        "page_to_go"
+    ]
+},
+{
+    "name": "battle_skill_type_config",
+    "fields": [
+        "id",
+        "charge_time",
+        "charge_tier",
+        "start_charge_tier"
+    ]
+},
+{
+    "name": "medal",
+    "fields": [
+        "id",
+        "name",
+        "order",
+        "evo_step",
+        "appearance_id",
+        "item_id",
+        "medal_obtain",
+        "medal_color",
+        "is_date",
+        "decorate_code"
+    ]
+},
+{
+    "name": "event_rank",
+    "fields": [
+        "id",
+        "title",
+        "remake_id",
+        "weight"
+    ]
+},
+{
+    "name": "chess_gasha_reward",
+    "fields": [
+        "id",
+        "item_ids",
+        "gift",
+        "prize_id",
+        "type",
+        "tickets_num"
+    ]
+},
+{
+    "name": "present",
+    "fields": [
+        "item_id",
+        "type",
+        "poster",
+        "multi_num",
+        "prize_id",
+        "drop_package_id",
+        "due_time",
+        "due_prize_id"
+    ]
+},
+{
+    "name": "gun_obtain",
+    "fields": [
+        "obtain_id",
+        "description",
+        "detail",
+        "goto_page_id"
+    ]
+},
+{
+    "name": "drop_content",
+    "fields": [
+        "id",
+        "package_id",
+        "content_type",
+        "prize_id"
+    ]
+},
+{
+    "name": "drop_package",
+    "fields": [
+        "id",
+        "content_ids"
+    ]
+},
+{
+    "name": "organization_level",
+    "fields": [
+        "id",
+        "organization_id",
+        "level",
+        "exp",
+        "function_skill_config_id",
+        "description",
+        "icon"
+    ]
+},
+{
+    "name": "related_story",
+    "fields": [
+        "id",
+        "story_campaign_id",
+        "mindupdate_story_id",
+        "fetter_id",
+        "skin_id"
+    ]
+},
+{
+    "name": "story_playback",
+    "fields": [
+        "id",
+        "story_campaign_id",
+        "name",
+        "chapter",
+        "type",
+        "game_chronicle",
+        "description",
+        "is_hide"
+    ]
+},
+{
+    "name": "event_battlepass",
+    "fields": [
+        "id",
+        "name",
+        "pt_item_id",
+        "gift_free",
+        "gift_paytounlock",
+        "gift_plus",
+        "gift_extra",
+        "start_time",
+        "end_time",
+        "skin_id",
+        "paid_productid",
+        "paid_productid_discount",
+        "exp_mallid",
+        "discount_itemid",
+        "exhibit_bonus",
+        "unlock_itemid"
+    ]
+},
+{
+    "name": "daily",
+    "fields": [
+        "identity",
+        "mission_type",
+        "type",
+        "count",
+        "user_exp",
+        "mp",
+        "ammo",
+        "mre",
+        "part",
+        "core",
+        "gem",
+        "gun_id",
+        "item_ids",
+        "title",
+        "content",
+        "function_control_id",
+        "prize_id",
+        "exchange_prize_id"
+    ]
+},
+{
+    "name": "weekly",
+    "fields": [
+        "identity",
+        "type",
+        "count",
+        "user_exp",
+        "mp",
+        "ammo",
+        "mre",
+        "part",
+        "core",
+        "gem",
+        "gun_id",
+        "item_ids",
+        "title",
+        "content",
+        "function_control_id",
+        "prize_id",
+        "exchange_prize_id"
+    ]
+},
+{
+    "name": "battle_watch",
+    "fields": [
+        "id",
+        "description",
+        "max_times",
+        "if_delete_buff",
+        "record_chara1",
+        "record_chara2",
+        "watch_trigger_type",
+        "watch_sp_trigger",
+        "activation_watch_trigger",
+        "activation_skills",
+        "sp_skill_target",
+        "record_watch_trigger",
+        "new_record_chara1",
+        "new_record_chara2",
+        "unactivation_skills",
+        "sp_unaskill_target",
+        "ending_watch_trigger",
+        "ending_activation_skills",
+        "sp_endingskill_target"
+    ]
+},
+{
+    "name": "battle_watch_trigger",
+    "fields": [
+        "id",
+        "description",
+        "buff_judge",
+        "hurt_from",
+        "available_gun_type",
+        "hurt_type",
+        "is_hurt_body",
+        "hurt_formula_target",
+        "hurt_judge",
+        "watched_skill_type",
+        "watched_skill_group_id"
+    ]
+},
+{
+    "name": "fairy_type",
+    "fields": [
+        "id",
+        "name",
+        "en_name"
+    ]
+},
+{
+    "name": "fairy_charavoice",
+    "fields": [
+        "id",
+        "name",
+        "code",
+        "is_hidden",
+        "is_fetter"
+    ]
+},
+{
+    "name": "fairy_in_ally",
+    "fields": [
+        "id",
+        "fairy_id",
+        "fairy_lv",
+        "quality_lv",
+        "skill_lv",
+        "passive_skill",
+        "equip_id",
+        "mod"
+    ]
+}
+]
