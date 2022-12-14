@@ -52,11 +52,15 @@
 		
 		// Grab selected field
 		e = document.getElementById("selectField");
-		var field = e.options[e.selectedIndex].value;
+		if (e.selectedIndex != -1) {
+			var field = e.options[e.selectedIndex].value;
+		}
 		
 		// Grab selected criteria
 		e = document.getElementById("selectCriteria");
-		var criteria = e.options[e.selectedIndex].value;		
+		if (e.selectedIndex != -1) {
+			var criteria = e.options[e.selectedIndex].value;		
+		}
 		
 		// Grab val for comparison
 		var val = String(document.getElementById("filterInput").value);
