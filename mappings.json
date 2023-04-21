@@ -149,7 +149,8 @@ var mappings = [
         "equip3",
         "skin",
         "eat_lv",
-        "if_modification"
+        "if_modification",
+        "rec"
     ]
 },
 {
@@ -212,7 +213,11 @@ var mappings = [
         "gun_detail_bg",
         "org_id",
         "related_story_id",
-        "show_damage_skin"
+        "show_damage_skin",
+        "gun_tag_ids",
+        "atk_speed_max",
+        "ratio_rec",
+        "recommended_team_ids"
     ]
 },
 {
@@ -437,6 +442,7 @@ var mappings = [
     "fields": [
         "id",
         "duplicate_type",
+        "integration_switch",
         "coin_type",
         "campaign",
         "sub",
@@ -518,7 +524,11 @@ var mappings = [
         "drop_key_info",
         "lose_type",
         "fight_environment_group",
-        "environment_transform_config"
+        "environment_transform_config",
+        "recommended_team_ids",
+        "restart_hide",
+        "auto_battle",
+        "daily_demand"
     ]
 },
 {
@@ -686,7 +696,9 @@ var mappings = [
         "watch_id",
         "orb_effect",
         "hurt_id",
-        "hurt_cd"
+        "hurt_cd",
+        "forced_debuff",
+        "parameter_value"
     ]
 },
 {
@@ -763,7 +775,10 @@ var mappings = [
         "offset",
         "lifebar_offset",
         "enemy_illustration_id",
-        "location_offset"
+        "location_offset",
+        "crit",
+        "crit_dmg",
+        "tenacity"
     ]
 },
 {
@@ -778,7 +793,9 @@ var mappings = [
         "armor",
         "shield",
         "def",
-        "def_break"
+        "def_break",
+        "tenacity",
+        "debuff_resistance"
     ]
 },
 {
@@ -968,7 +985,8 @@ var mappings = [
         "effect_ext",
         "targettrain_cancollect",
         "fight_type",
-        "type_coef"
+        "type_coef",
+        "recommended_team_ids"
     ]
 },
 {
@@ -1483,7 +1501,16 @@ var mappings = [
         "duration",
         "sangvis",
         "betray_result_guns",
-        "betray_result_sangvis"
+        "betray_result_sangvis",
+        "mapping_guns",
+        "mapping_sangvis",
+        "mapping_fairy",
+        "mapping_squad",
+        "mapping_allyguns",
+        "mapping_allysangvis",
+        "mapping_allyfairy",
+        "is_beyond_start",
+        "mapping_allysquad"
     ]
 },
 {
@@ -1595,7 +1622,12 @@ var mappings = [
         "priority",
         "carry_mission_skill",
         "sangvis_chip_id",
-        "ext_move"
+        "ext_move",
+        "is_still_alive",
+        "ext_ap_cost",
+        "effect_birth",
+        "effect_death",
+        "effect_duration"
     ]
 },
 {
@@ -1674,7 +1706,8 @@ var mappings = [
         "is_live2d",
         "filter_type",
         "frame_id",
-        "logo_code"
+        "logo_code",
+        "event_id"
     ]
 },
 {
@@ -1860,7 +1893,8 @@ var mappings = [
         "on_sale_days",
         "price_up",
         "classification_id",
-        "description"
+        "description",
+        "increasing_price"
     ]
 },
 {
@@ -1985,7 +2019,8 @@ var mappings = [
         "profile_pic",
         "item_access",
         "detail_introduction",
-        "sort"
+        "sort",
+        "normal_description"
     ]
 },
 {
@@ -2033,7 +2068,8 @@ var mappings = [
         "extra",
         "spine_scale",
         "org_id",
-        "related_story_id"
+        "related_story_id",
+        "tenacity_rank"
     ]
 },
 {
@@ -2149,7 +2185,10 @@ var mappings = [
         "picture_offset",
         "picture_scale",
         "dorm_scale",
-        "org_id"
+        "org_id",
+        "gun_tag_ids",
+        "ratio_rec",
+        "recommended_team_ids"
     ]
 },
 {
@@ -2165,7 +2204,8 @@ var mappings = [
         "advance_rate",
         "advance_hit",
         "advance_dodge",
-        "advance_armor"
+        "advance_armor",
+        "advance_rec"
     ]
 },
 {
@@ -2178,6 +2218,7 @@ var mappings = [
         "if_skill_up",
         "resolution_number",
         "resolution_hp",
+        "resolution_rec",
         "resolution_pow",
         "resolution_rate",
         "resolution_hit",
@@ -2220,7 +2261,8 @@ var mappings = [
         "exchange_num",
         "repair_cost",
         "trans_num",
-        "skills_max_lv"
+        "skills_max_lv",
+        "basic_rec"
     ]
 },
 {
@@ -2352,14 +2394,16 @@ var mappings = [
         "description",
         "reco_location",
         "reco_gun_1",
-        "reco_gun_2",
-        "reco_gun_3",
         "reco_gun_4",
-        "reco_gun_5",
-        "reco_gun_6",
         "reco_gun_7",
+        "reco_gun_2",
+        "reco_gun_5",
         "reco_gun_8",
-        "reco_gun_9"
+        "reco_gun_3",
+        "reco_gun_6",
+        "reco_gun_9",
+        "team_tag_ids",
+        "unlock_mission_id"
     ]
 },
 {
@@ -2545,7 +2589,9 @@ var mappings = [
         "des",
         "code",
         "equip_unit",
-        "group_skill"
+        "group_skill",
+        "fit_gun",
+        "is_addition"
     ]
 },
 {
@@ -2681,7 +2727,8 @@ var mappings = [
         "id",
         "name",
         "carnival_goto_page_id",
-        "function_control_id"
+        "function_control_id",
+        "fetter_story_id"
     ]
 },
 {
@@ -3360,7 +3407,8 @@ var mappings = [
         "prize_id",
         "drop_package_id",
         "due_time",
-        "due_prize_id"
+        "due_prize_id",
+        "present_info"
     ]
 },
 {
@@ -3558,6 +3606,248 @@ var mappings = [
         "passive_skill",
         "equip_id",
         "mod"
+    ]
+},
+{
+    "name": "daily_map",
+    "fields": [
+        "id",
+        "coordinate",
+        "type",
+        "random",
+        "start",
+        "prize_tag",
+        "neighbor"
+    ]
+},
+{
+    "name": "gun_tag",
+    "fields": [
+        "id",
+        "tag",
+        "tag_type",
+        "description",
+        "is_show"
+    ]
+},
+{
+    "name": "auto_formation_sangvis",
+    "fields": [
+        "id",
+        "name",
+        "description",
+        "team_info",
+        "front_tag_ids",
+        "back_tag_ids",
+        "team_tag_ids"
+    ]
+},
+{
+    "name": "recommended_team",
+    "fields": [
+        "id",
+        "name",
+        "auto_formation_id",
+        "auto_formation_sangvis_id"
+    ]
+},
+{
+    "name": "team_tag",
+    "fields": [
+        "id",
+        "name"
+    ]
+},
+{
+    "name": "daily_map_light",
+    "fields": [
+        "id",
+        "season_code",
+        "light_color",
+        "light_pos",
+        "light_dir",
+        "light_angle",
+        "light_brightness",
+        "shadow_angle",
+        "bright_contrast_ratio",
+        "dark_contrast_ratio",
+        "light_tex_brightness",
+        "dir_light_shadow_colorLock",
+        "model_tex_color",
+        "state_code",
+        "model_name",
+        "dir_light_shadow_colorUnLock"
+    ]
+},
+{
+    "name": "daily_map_model",
+    "fields": [
+        "id",
+        "type",
+        "difficulty_group",
+        "height_region",
+        "code",
+        "icon_deviation"
+    ]
+},
+{
+    "name": "daily_mission",
+    "fields": [
+        "id",
+        "difficulty_type",
+        "difficulty_recommend",
+        "pic"
+    ]
+},
+{
+    "name": "daily_mission_group",
+    "fields": [
+        "id",
+        "type",
+        "difficulty",
+        "difficulty_group",
+        "state_type",
+        "mission_group",
+        "daily_pt"
+    ]
+},
+{
+    "name": "return_player",
+    "fields": [
+        "id",
+        "page_id",
+        "continuous_time",
+        "return_task",
+        "prize_id"
+    ]
+},
+{
+    "name": "return_player_task",
+    "fields": [
+        "id",
+        "type",
+        "count",
+        "title",
+        "describe",
+        "function_control_id",
+        "prize_id",
+        "activity_bonus"
+    ]
+},
+{
+    "name": "daily_note",
+    "fields": [
+        "id",
+        "name",
+        "title",
+        "code"
+    ]
+},
+{
+    "name": "daily_gunequip_obtain",
+    "fields": [
+        "id",
+        "type",
+        "equip_or_gun_id",
+        "get_type",
+        "is_limit"
+    ]
+},
+{
+    "name": "daily_map_spot",
+    "fields": [
+        "id",
+        "map_id",
+        "spot_id",
+        "spot_type",
+        "sub_type",
+        "difficulty_group",
+        "mission",
+        "model_code",
+        "model_height"
+    ]
+},
+{
+    "name": "daily_pass",
+    "fields": [
+        "id",
+        "type",
+        "pt",
+        "gift",
+        "gift2",
+        "start_time",
+        "end_time",
+        "gift_background",
+        "item"
+    ]
+},
+{
+    "name": "daily_event",
+    "fields": [
+        "id",
+        "name",
+        "hint",
+        "script",
+        "options",
+        "notes"
+    ]
+},
+{
+    "name": "daily_event_option",
+    "fields": [
+        "id",
+        "fight_environment_skill_id",
+        "description",
+        "balance_out",
+        "round_duration",
+        "battle_duration",
+        "delay"
+    ]
+},
+{
+    "name": "daily_mission_difficulty_group",
+    "fields": [
+        "id",
+        "name",
+        "recommend_gun_level",
+        "recommend_fairy_level",
+        "recommend_fairy_tip",
+        "recommend_fairies",
+        "recommend_squad_level",
+        "recommend_squad_tip",
+        "recommend_squads",
+        "default_effects",
+        "event_effects",
+        "default_bg",
+        "event_bg"
+    ]
+},
+{
+    "name": "event_lottery",
+    "fields": [
+        "id",
+        "lottery_ids",
+        "start_time",
+        "end_time",
+        "left_code",
+        "bg_code"
+    ]
+},
+{
+    "name": "lottery",
+    "fields": [
+        "id",
+        "item",
+        "name",
+        "first_info",
+        "first_count",
+        "first_code",
+        "second_info",
+        "second_count",
+        "second_code",
+        "third_info",
+        "third_count",
+        "third_code"
     ]
 }
 ]
