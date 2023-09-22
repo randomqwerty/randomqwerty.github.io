@@ -110,7 +110,9 @@ var mappings = [
         "map_num",
         "package",
         "auto_teleport",
-        "spot_effect"
+        "spot_effect",
+        "access_type",
+        "code"
     ]
 },
 {
@@ -217,7 +219,8 @@ var mappings = [
         "gun_tag_ids",
         "atk_speed_max",
         "ratio_rec",
-        "recommended_team_ids"
+        "recommended_team_ids",
+        "item_id"
     ]
 },
 {
@@ -274,6 +277,7 @@ var mappings = [
         "is_additional",
         "launch_time",
         "obtain_ids",
+        "is_piece_only",
         "piece_item_id",
         "destroy_coef",
         "assist_damage_destroy_coef",
@@ -307,25 +311,21 @@ var mappings = [
     "fields": [
         "id",
         "name",
+        "squad_id",
         "rank",
-        "color",
-        "grid",
         "is_random",
-        "random_number",
         "assist_damage",
         "assist_def_break",
         "assist_hit",
         "assist_reload",
-        "intensity_ratio",
-        "grid_number",
         "damage",
         "atk_speed",
         "hit",
         "def",
-        "bonus_type",
-        "type",
-        "fit_squads",
-        "develop_duration"
+        "intensity_ratio",
+        "grid_number",
+        "unlock_chip_point",
+        "color"
     ]
 },
 {
@@ -451,6 +451,7 @@ var mappings = [
         "special_type",
         "name",
         "difficulty",
+        "recommend_gun_level",
         "exp_parameter",
         "type",
         "enemy_ai_type",
@@ -528,7 +529,10 @@ var mappings = [
         "recommended_team_ids",
         "restart_hide",
         "auto_battle",
-        "daily_demand"
+        "daily_demand",
+        "limit_vehicle",
+        "limit_component_pool",
+        "guide_cdn"
     ]
 },
 {
@@ -612,7 +616,9 @@ var mappings = [
     "fields": [
         "star_id",
         "lv_unlock",
-        "cost_self_piece",
+        "cost_data",
+        "chip_point",
+        "unlock_waiting_time",
         "cpu_rate"
     ]
 },
@@ -733,7 +739,9 @@ var mappings = [
         "is_ricochet",
         "is_shield",
         "fix_damage",
-        "ui_control"
+        "ui_control",
+        "range_buff_target",
+        "range_buff_self"
     ]
 },
 {
@@ -778,7 +786,8 @@ var mappings = [
         "location_offset",
         "crit",
         "crit_dmg",
-        "tenacity"
+        "tenacity",
+        "danger"
     ]
 },
 {
@@ -986,7 +995,10 @@ var mappings = [
         "targettrain_cancollect",
         "fight_type",
         "type_coef",
-        "recommended_team_ids"
+        "recommended_team_ids",
+        "show_lv",
+        "show_color",
+        "battle_range"
     ]
 },
 {
@@ -1070,7 +1082,7 @@ var mappings = [
         "passive_skill",
         "max_level",
         "auto_select_id",
-        "equip_group_id",
+        "group_id",
         "is_addition",
         "is_show",
         "obtain_ids",
@@ -1099,7 +1111,11 @@ var mappings = [
         "equip_n_pool",
         "equip_1_pool",
         "limit_equips",
-        "draw_event_id"
+        "draw_event_id",
+        "get_component_num",
+        "component_n_pool",
+        "component_1_pool",
+        "limit_component"
     ]
 },
 {
@@ -1281,7 +1297,9 @@ var mappings = [
         "drop_item",
         "fun_game_type",
         "fun_game_name",
-        "fun_game_result_sub"
+        "fun_game_result_sub",
+        "resources_cost",
+        "resources_change"
     ]
 },
 {
@@ -1308,7 +1326,8 @@ var mappings = [
         "gift_position",
         "illustrator_cv",
         "order",
-        "class_id"
+        "class_id",
+        "skin_source"
     ]
 },
 {
@@ -1502,6 +1521,8 @@ var mappings = [
         "sangvis",
         "betray_result_guns",
         "betray_result_sangvis",
+        "betray_result_ai",
+        "betray_result_ai_content",
         "mapping_guns",
         "mapping_sangvis",
         "mapping_fairy",
@@ -1509,8 +1530,12 @@ var mappings = [
         "mapping_allyguns",
         "mapping_allysangvis",
         "mapping_allyfairy",
+        "mapping_allysquad",
         "is_beyond_start",
-        "mapping_allysquad"
+        "vehicle",
+        "betray_result_vehicle",
+        "mapping_vehicle",
+        "mapping_allyvehicle"
     ]
 },
 {
@@ -1627,7 +1652,8 @@ var mappings = [
         "ext_ap_cost",
         "effect_birth",
         "effect_death",
-        "effect_duration"
+        "effect_duration",
+        "switch_spine_action"
     ]
 },
 {
@@ -1855,7 +1881,8 @@ var mappings = [
         "bp_pay",
         "fairy_ids",
         "chip",
-        "commander_uniform"
+        "commander_uniform",
+        "vehicle_component"
     ]
 },
 {
@@ -2613,6 +2640,8 @@ var mappings = [
         "name",
         "type",
         "sub_type",
+        "sub_rank",
+        "sub_rank_name",
         "refresh",
         "title",
         "top_rewards",
@@ -2648,6 +2677,7 @@ var mappings = [
         "id",
         "name",
         "type",
+        "permanent_type",
         "value",
         "condition",
         "start_time",
@@ -3408,7 +3438,8 @@ var mappings = [
         "drop_package_id",
         "due_time",
         "due_prize_id",
-        "present_info"
+        "present_info",
+        "function"
     ]
 },
 {
@@ -3617,7 +3648,9 @@ var mappings = [
         "random",
         "start",
         "prize_tag",
-        "neighbor"
+        "neighbor",
+        "map_label",
+        "boss"
     ]
 },
 {
@@ -3750,7 +3783,8 @@ var mappings = [
         "type",
         "equip_or_gun_id",
         "get_type",
-        "is_limit"
+        "is_limit",
+        "drop_difficulty"
     ]
 },
 {
@@ -3762,7 +3796,6 @@ var mappings = [
         "spot_type",
         "sub_type",
         "difficulty_group",
-        "mission",
         "model_code",
         "model_height"
     ]
@@ -3816,6 +3849,9 @@ var mappings = [
         "recommend_squad_level",
         "recommend_squad_tip",
         "recommend_squads",
+        "recommended_vehicles",
+        "recommended_vehicle_tip",
+        "recommended_vehicles_effect",
         "default_effects",
         "event_effects",
         "default_bg",
@@ -3848,6 +3884,408 @@ var mappings = [
         "third_info",
         "third_count",
         "third_code"
+    ]
+},
+{
+    "name": "vehicle",
+    "fields": [
+        "id",
+        "name",
+        "en_name",
+        "code",
+        "introduce",
+        "type",
+        "population",
+        "capacity",
+        "energy_max",
+        "energy_bak_max",
+        "energy_cost",
+        "baseammo",
+        "basemre",
+        "ammo_part",
+        "mre_part",
+        "type_component1",
+        "type_component2",
+        "type_component3",
+        "type_component4",
+        "type_component5",
+        "name_component1",
+        "name_component2",
+        "name_component3",
+        "name_component4",
+        "name_component5",
+        "common_component_num",
+        "crew_ids",
+        "launch_times",
+        "basic_hp",
+        "basic_heavy_damage",
+        "basic_light_damage",
+        "basic_reload",
+        "basic_atk_speed",
+        "basic_precision",
+        "basic_hit",
+        "basic_armor",
+        "basic_dodge",
+        "H_armor_piercing",
+        "L_armor_piercing",
+        "def_break",
+        "crit",
+        "crit_dmg",
+        "night_vision",
+        "move",
+        "L_attack_rang",
+        "H_attack_rang",
+        "long_attack_range",
+        "assist_type",
+        "battle_assist_range",
+        "display_assist_damage_area",
+        "deploy_round",
+        "assist_attack_round",
+        "attack_round",
+        "original_component1",
+        "original_component2",
+        "original_component3",
+        "talent_skill",
+        "passive_skill",
+        "dynamic_passive_skill",
+        "normal_attack",
+        "performance_skill",
+        "assit_skill",
+        "assit_passive_skill",
+        "mission_skill",
+        "mission_skill_repair",
+        "destroy_coef",
+        "assist_damage_destroy_coef",
+        "basic_effect",
+        "effect_rank",
+        "interact_point",
+        "interact_point_offset",
+        "C_off",
+        "unlock_mission",
+        "dorm_interact"
+    ]
+},
+{
+    "name": "vehicle_component_roll",
+    "fields": [
+        "id",
+        "name",
+        "description",
+        "attr_num",
+        "heavy_damage",
+        "light_damage",
+        "reload",
+        "precision",
+        "atk_speed",
+        "hit",
+        "armor",
+        "dodge",
+        "crit_rate",
+        "crit_damage",
+        "L_armor_piercing",
+        "def_break",
+        "H_armor_piercing",
+        "energy",
+        "energy_bak",
+        "skill_group1_weight",
+        "skill_group2_weight",
+        "skill_group3_weight",
+        "skill_group1",
+        "skill_group2",
+        "skill_group3"
+    ]
+},
+{
+    "name": "vehicle_component_att_value",
+    "fields": [
+        "id",
+        "name",
+        "heavy_damage",
+        "light_damage",
+        "reload",
+        "precision",
+        "atk_speed",
+        "hit",
+        "armor",
+        "dodge",
+        "crit_rate",
+        "crit_damage",
+        "L_armor_piercing",
+        "def_break",
+        "H_armor_piercing",
+        "energy",
+        "energy_bak",
+        "skill_group1_lv",
+        "skill_group2_lv",
+        "skill_group3_lv"
+    ]
+},
+{
+    "name": "vehicle_component",
+    "fields": [
+        "id",
+        "name",
+        "description",
+        "rank",
+        "code",
+        "type",
+        "group",
+        "unlock_lv",
+        "basic_effect",
+        "search_range",
+        "normal_attack",
+        "skill",
+        "inherent_mission_skill",
+        "turn_mission_skill",
+        "skill_group",
+        "h_weapon_ratio",
+        "l_weapon_ratio",
+        "hit_ratio",
+        "atk_speed_ratio",
+        "reload_ratio",
+        "precision_ratio",
+        "heavy_damage",
+        "light_damage",
+        "reload",
+        "precision",
+        "atk_speed",
+        "hit",
+        "armor",
+        "dodge",
+        "speed",
+        "critical_harm_rate",
+        "critical_percent",
+        "H_armor_piercing",
+        "L_armor_piercing",
+        "def_break",
+        "energy",
+        "energy_bak",
+        "night_view_percent",
+        "is_addition",
+        "is_show",
+        "obtain_ids",
+        "sp_description",
+        "att_roll",
+        "bonus_type",
+        "interact_point",
+        "interact_point_offset",
+        "exp_provide",
+        "introduction",
+        "attack_type",
+        "effect_range",
+        "custom_type"
+    ]
+},
+{
+    "name": "vehicle_component_type",
+    "fields": [
+        "id",
+        "name",
+        "name_en",
+        "code"
+    ]
+},
+{
+    "name": "vehicle_crew",
+    "fields": [
+        "id",
+        "name",
+        "unit_type_description",
+        "description",
+        "available_unit_type",
+        "if_show",
+        "required_level",
+        "required_rank",
+        "required_number",
+        "h_weapon_damage",
+        "l_weapon_damage",
+        "reload",
+        "precision",
+        "atk_speed",
+        "hit",
+        "armor",
+        "dodge",
+        "basic_effect"
+    ]
+},
+{
+    "name": "vehicle_tech_tree",
+    "fields": [
+        "id",
+        "vehicle_id",
+        "unlock_node",
+        "unlock_quest",
+        "unlock_exp",
+        "unlock_cost",
+        "node_type",
+        "slot_id",
+        "mission_skill_type",
+        "skill_id",
+        "passive_skill",
+        "basic_effect",
+        "hp",
+        "armor",
+        "dodge",
+        "heavy_damage",
+        "light_damage",
+        "reload",
+        "atk_speed",
+        "precision",
+        "hit",
+        "crit",
+        "crit_dmg",
+        "H_armor_piercing",
+        "L_armor_piercing",
+        "def_break"
+    ]
+},
+{
+    "name": "vehicle_skin",
+    "fields": [
+        "id",
+        "name",
+        "type",
+        "group_id",
+        "vehicle_id",
+        "blueprint_id",
+        "class_id",
+        "code",
+        "item_id",
+        "obtain",
+        "feature",
+        "introduction",
+        "is_show"
+    ]
+},
+{
+    "name": "vehicle_component_roll_type",
+    "fields": [
+        "id",
+        "name",
+        "type",
+        "roll_code",
+        "skill_id",
+        "group"
+    ]
+},
+{
+    "name": "vehicle_in_ally",
+    "fields": [
+        "id",
+        "vehicle_id",
+        "life",
+        "exp",
+        "component",
+        "common_component",
+        "hp",
+        "armor",
+        "dodge",
+        "heavy_damage",
+        "light_damage",
+        "reload",
+        "atk_speed",
+        "precision",
+        "hit",
+        "crit",
+        "crit_dmg",
+        "H_armor_piercing",
+        "L_armor_piercing",
+        "def_break",
+        "unlocked_nodes",
+        "skin",
+        "crew"
+    ]
+},
+{
+    "name": "vehicle_component_in_ally",
+    "fields": [
+        "id",
+        "component_id",
+        "level",
+        "heavy_damage",
+        "light_damage",
+        "reload",
+        "precision",
+        "atk_speed",
+        "hit",
+        "armor",
+        "dodge",
+        "crit_rate",
+        "crit_damage",
+        "H_armor_piercing",
+        "L_armor_piercing",
+        "def_break",
+        "energy",
+        "energy_bak",
+        "skill",
+        "skin"
+    ]
+},
+{
+    "name": "vehicle_unlock_task",
+    "fields": [
+        "id",
+        "description",
+        "task_type",
+        "count",
+        "condition",
+        "vehicle_id",
+        "group_type",
+        "function_control_id"
+    ]
+},
+{
+    "name": "vehicle_component_group",
+    "fields": [
+        "id",
+        "name",
+        "component_type"
+    ]
+},
+{
+    "name": "vehicle_type",
+    "fields": [
+        "id",
+        "name",
+        "name_en",
+        "code",
+        "fix_time",
+        "mp_fix",
+        "part_fix"
+    ]
+},
+{
+    "name": "adjutant_skin",
+    "fields": [
+        "id",
+        "type",
+        "name",
+        "code",
+        "voice",
+        "substitute_voice",
+        "obtain_txt",
+        "item_id",
+        "pos_info"
+    ]
+},
+{
+    "name": "daily_map_route",
+    "fields": [
+        "map_id",
+        "route",
+        "create_date",
+        "map_label"
+    ]
+},
+{
+    "name": "daily_exmission_group",
+    "fields": [
+        "id",
+        "mission_id",
+        "state_type",
+        "vehicle_id",
+        "effect",
+        "mission_floor"
     ]
 }
 ]
