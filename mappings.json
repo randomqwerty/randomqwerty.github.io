@@ -532,7 +532,8 @@ var mappings = [
         "daily_demand",
         "limit_vehicle",
         "limit_component_pool",
-        "guide_cdn"
+        "guide_cdn",
+        "mission_intensify_item_config"
     ]
 },
 {
@@ -704,7 +705,9 @@ var mappings = [
         "hurt_id",
         "hurt_cd",
         "forced_debuff",
-        "parameter_value"
+        "parameter_value",
+        "buff_sp_attributes",
+        "match_hurt_type"
     ]
 },
 {
@@ -741,7 +744,8 @@ var mappings = [
         "fix_damage",
         "ui_control",
         "range_buff_target",
-        "range_buff_self"
+        "range_buff_self",
+        "hurt_type"
     ]
 },
 {
@@ -1086,7 +1090,8 @@ var mappings = [
         "is_addition",
         "is_show",
         "obtain_ids",
-        "sp_description"
+        "sp_description",
+        "description_skill"
     ]
 },
 {
@@ -1299,7 +1304,8 @@ var mappings = [
         "fun_game_name",
         "fun_game_result_sub",
         "resources_cost",
-        "resources_change"
+        "resources_change",
+        "use_arbitrary"
     ]
 },
 {
@@ -1653,7 +1659,11 @@ var mappings = [
         "effect_birth",
         "effect_death",
         "effect_duration",
-        "switch_spine_action"
+        "switch_spine_action",
+        "shader",
+        "vehicle_engine_efficacy",
+        "vehicle_assist_range",
+        "vehicle_longattack_range"
     ]
 },
 {
@@ -3294,7 +3304,8 @@ var mappings = [
         "grade_id",
         "sort",
         "condition",
-        "new_unlock_ids"
+        "new_unlock_ids",
+        "goto_page_id"
     ]
 },
 {
@@ -3499,7 +3510,9 @@ var mappings = [
         "type",
         "game_chronicle",
         "description",
-        "is_hide"
+        "is_hide",
+        "tag",
+        "order"
     ]
 },
 {
@@ -3543,7 +3556,8 @@ var mappings = [
         "content",
         "function_control_id",
         "prize_id",
-        "exchange_prize_id"
+        "exchange_prize_id",
+        "goto_page_id"
     ]
 },
 {
@@ -3565,7 +3579,8 @@ var mappings = [
         "content",
         "function_control_id",
         "prize_id",
-        "exchange_prize_id"
+        "exchange_prize_id",
+        "goto_page_id"
     ]
 },
 {
@@ -3598,6 +3613,7 @@ var mappings = [
         "id",
         "description",
         "buff_judge",
+        "buff_mintime",
         "hurt_from",
         "available_gun_type",
         "hurt_type",
@@ -3764,7 +3780,8 @@ var mappings = [
         "describe",
         "function_control_id",
         "prize_id",
-        "activity_bonus"
+        "activity_bonus",
+        "goto_page_id"
     ]
 },
 {
@@ -4040,15 +4057,15 @@ var mappings = [
         "skill_group",
         "h_weapon_ratio",
         "l_weapon_ratio",
-        "hit_ratio",
-        "atk_speed_ratio",
         "reload_ratio",
+        "atk_speed_ratio",
         "precision_ratio",
+        "hit_ratio",
         "heavy_damage",
         "light_damage",
         "reload",
-        "precision",
         "atk_speed",
+        "precision",
         "hit",
         "armor",
         "dodge",
@@ -4073,7 +4090,9 @@ var mappings = [
         "introduction",
         "attack_type",
         "effect_range",
-        "custom_type"
+        "custom_type",
+        "unable_buff_id",
+        "unable_buff_type"
     ]
 },
 {
@@ -4231,7 +4250,8 @@ var mappings = [
         "condition",
         "vehicle_id",
         "group_type",
-        "function_control_id"
+        "function_control_id",
+        "goto_page_id"
     ]
 },
 {
@@ -4286,6 +4306,63 @@ var mappings = [
         "vehicle_id",
         "effect",
         "mission_floor"
+    ]
+},
+{
+    "name": "mission_intensify_item_config",
+    "fields": [
+        "item_id",
+        "fight_environment_skill",
+        "mission_skill_config"
+    ]
+},
+{
+    "name": "normal_activity",
+    "fields": [
+        "id",
+        "campaign_id",
+        "tag",
+        "order",
+        "name",
+        "chapter_name",
+        "bg_code",
+        "bg_config",
+        "desc",
+        "scene_name",
+        "event_prize_level",
+        "rank_id"
+    ]
+},
+{
+    "name": "carnival_task",
+    "fields": [
+        "id",
+        "type",
+        "carnival_type_id",
+        "count",
+        "prize_id",
+        "title",
+        "content",
+        "function_control_id",
+        "goto_page_id"
+    ]
+},
+{
+    "name": "simulation_battle_reward",
+    "fields": [
+        "mission_id",
+        "item_id",
+        "gift_id"
+    ]
+},
+{
+    "name": "vehicle_skin_class",
+    "fields": [
+        "id",
+        "name",
+        "vehicle_ids",
+        "pic_code",
+        "desc"
     ]
 }
 ]
