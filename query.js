@@ -2,10 +2,7 @@ var execBtn = document.getElementById("execute");
 var outputElm = document.getElementById('output');
 var errorElm = document.getElementById('error');
 var commandsElm = document.getElementById('commands');
-var dbFileElm = document.getElementById('dbfile');
-var savedbElm = document.getElementById('savedb');
 var e = document.getElementById("selectServer");
-var server = e.options[e.selectedIndex].value.toUpperCase();
 
 // Start the worker in which sql.js will run
 var worker = new Worker("worker.sql-wasm.js");
@@ -17,9 +14,10 @@ worker.postMessage({action:'open'});
 loadUnivDB();
 
 function loadUnivDB() {
+  var server = e.options[e.selectedIndex].value.toUpperCase();
   var xhr = new XMLHttpRequest();
   //xhr.open('GET', 'GFLData.db', true);
-  xhr.open('GET', 'https://github.com/randomqwerty/GFLDataCSV/raw/main/GFLData_' + server + '.db', true);
+  xhr.open('GET', 'https://raw.githubusercontent.com/randomqwerty/GFLDataCSV/main/GFLData_' + server + '.db', true);
   xhr.responseType = 'arraybuffer';
 
   xhr.onload = e => {
@@ -118,49 +116,10 @@ var editor = CodeMirror.fromTextArea(commandsElm, {
     autofocus: true,
 		extraKeys: {
 			"Ctrl-Enter": execEditorContents,
-			"Ctrl-S": savedb,
 		}
 });
 
-// Load a db from a file
-dbFileElm.onchange = function() {
-	var f = dbFileElm.files[0];
-	var r = new FileReader();
-	r.onload = function() {
-		worker.onmessage = function () {
-			toc("Loading database from file");
-			// Show the schema of the loaded database
-			editor.setValue("SELECT `name`, `sql`\n  FROM `sqlite_master`\n  WHERE type='table';");
-			execEditorContents();
-		};
-		tic();
-		try {
-			worker.postMessage({action:'open',buffer:r.result}, [r.result]);
-		}
-		catch(exception) {
-			worker.postMessage({action:'open',buffer:r.result});
-		}
-	}
-	r.readAsArrayBuffer(f);
+function updateServer() {
+	var server = e.options[e.selectedIndex].value.toUpperCase();
+	loadUnivDB();
 }
-
-// Save the db to a file
-function savedb () {
-	worker.onmessage = function(event) {
-		toc("Exporting the database");
-		var arraybuff = event.data.buffer;
-		var blob = new Blob([arraybuff]);
-		var a = document.createElement("a");
-		a.href = window.URL.createObjectURL(blob);
-		a.download = "sql.db";
-		a.onclick = function() {
-			setTimeout(function() {
-				window.URL.revokeObjectURL(a.href);
-			}, 1500);
-		};
-		a.click();
-	};
-	tic();
-	worker.postMessage({action:'export'});
-}
-savedbElm.addEventListener("click", savedb, true);

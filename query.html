@@ -23,17 +23,16 @@
 	  <option value="ch">CH</option>
 	  <option value="tw">TW</option>
 	</select>
+	<button id="execute" class="button" onclick="updateServer()">Update Server</button>
 	<br>
 	<br>
 	
     <label for='commands'>Enter SQL commands here</label>
 	<br>
-	<textarea id="commands">SELECT * FROM en_gun</textarea>
+	<textarea id="commands">SELECT * FROM gun</textarea>
 	
 	<br>
-	<button id="execute" class="button">Execute</button>
-	<button id='savedb'  class="button">Save the db</button>
-	<label class="button">Load an SQLite database file: <input type='file' id='dbfile'></label>
+	<button id="execute" class="button">Execute SQL</button>
 
 	<div id="error" class="error"></div>
 
