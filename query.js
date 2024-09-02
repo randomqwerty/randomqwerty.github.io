@@ -27,7 +27,7 @@ function loadUnivDB() {
 			// Show the schema of the loaded database
 			editor.setValue("SELECT `name`, `sql`\n  FROM `sqlite_master`\n  WHERE type='table';");
 			execEditorContents();
-			editor.setValue("-- enter your commands here");
+			editor.setValue("-- enter your commands here\nSELECT * FROM gun");
 		};
 		tic();
 		try {
