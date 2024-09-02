@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+    <link rel="stylesheet" href="query.css">
+    <title>GFL Data Viewer</title>
+  </head>
+
+  <body>
+    <h1>GFLData Viewer</h1>
+	<p>Data from: <a href="https://github.com/randomqwerty/GFLData">https://github.com/randomqwerty/GFLData</a></p
+	<p><a href="index.html">Data Viewer</a></p>
+	<p><a href="diffcheck.html">Diff Checker</a></p>
+
+	<br>
+	<label for="selectServer">Choose a server to query from:</label>
+	<br>
+	
+	<select name="selectServer" id="selectServer">
+	  <option value="en">EN</option>
+	  <option value="jp">JP</option>
+	  <option value="kr">KR</option>
+	  <option value="ch">CH</option>
+	  <option value="tw">TW</option>
+	</select>
+	<br>
+	<br>
+	
+    <label for='commands'>Enter SQL commands here</label>
+	<br>
+	<textarea id="commands">SELECT * FROM en_gun</textarea>
+	
+	<br>
+	<button id="execute" class="button">Execute</button>
+	<button id='savedb'  class="button">Save the db</button>
+	<label class="button">Load an SQLite database file: <input type='file' id='dbfile'></label>
+
+	<div id="error" class="error"></div>
+
+	<pre id="output">Results will be displayed here:</pre>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.11.0/sql-wasm.js"></script>
+	<script type="text/javascript" src="query.js"></script>
+  </body>
+</html>

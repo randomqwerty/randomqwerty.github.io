@@ -1,6 +1,6 @@
 body {
   background-color: #333333;
-  font-family: 'Noto Sans', 'Noto Sans SC', sans-serif;
+  font-family: sans-serif;
   color: #EAEAEA;
 }
 h1 {
@@ -16,7 +16,7 @@ a {
 }
 td {
   background-color: #333333;
-  font-family: 'Noto Sans', 'Noto Sans SC', sans-serif;
+  font-family: sans-serif;
   color: #EAEAEA;
 }
 th {
