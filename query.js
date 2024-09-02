@@ -120,6 +120,5 @@ var editor = CodeMirror.fromTextArea(commandsElm, {
 });
 
 function updateServer() {
-	var server = e.options[e.selectedIndex].value.toUpperCase();
 	loadUnivDB();
 }
