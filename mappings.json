@@ -16,7 +16,8 @@ var mappings = [
         "consume_type",
         "item_access",
         "detail_introduction",
-        "is_hide_info"
+        "is_hide_info",
+        "type_sort"
     ]
 },
 {
@@ -533,7 +534,8 @@ var mappings = [
         "limit_vehicle",
         "limit_component_pool",
         "guide_cdn",
-        "mission_intensify_item_config"
+        "mission_intensify_item_config",
+        "mission_item"
     ]
 },
 {
@@ -771,6 +773,9 @@ var mappings = [
         "boss_hp",
         "def",
         "def_break",
+        "crit",
+        "crit_dmg",
+        "tenacity",
         "debuff_resistance",
         "level",
         "character",
@@ -788,10 +793,8 @@ var mappings = [
         "lifebar_offset",
         "enemy_illustration_id",
         "location_offset",
-        "crit",
-        "crit_dmg",
-        "tenacity",
-        "danger"
+        "danger",
+        "enemy_illustration_sub_id"
     ]
 },
 {
@@ -1406,7 +1409,8 @@ var mappings = [
         "function_control_id",
         "start_time",
         "end_time",
-        "is_new"
+        "is_new",
+        "increase"
     ]
 },
 {
@@ -1804,6 +1808,7 @@ var mappings = [
         "id",
         "type",
         "mission_campaign",
+        "event_name",
         "draw_event_id",
         "start_time",
         "end_time",
@@ -1811,7 +1816,8 @@ var mappings = [
         "function_control_id",
         "open_mission",
         "open_time",
-        "mission_event_opentime_white_list"
+        "mission_event_opentime_white_list",
+        "token_item_id"
     ]
 },
 {
@@ -1839,29 +1845,6 @@ var mappings = [
         "content",
         "function_control_id",
         "goto_page"
-    ]
-},
-{
-    "name": "guild_flag",
-    "fields": [
-        "id",
-        "type",
-        "pattern_code",
-        "texture",
-        "color"
-    ]
-},
-{
-    "name": "guild_level",
-    "fields": [
-        "lv",
-        "exp",
-        "max_member_num",
-        "max_vice_num",
-        "unlock_empty_room_id",
-        "unlock_room_type_id",
-        "title",
-        "title_medal_code"
     ]
 },
 {
@@ -2003,13 +1986,6 @@ var mappings = [
     ]
 },
 {
-    "name": "commander_color",
-    "fields": [
-        "id",
-        "icon_colors"
-    ]
-},
-{
     "name": "draw_event",
     "fields": [
         "id",
@@ -2049,6 +2025,7 @@ var mappings = [
         "skin",
         "poster",
         "code",
+        "normal_description",
         "bonus_description",
         "description",
         "is_hidden",
@@ -2057,7 +2034,7 @@ var mappings = [
         "item_access",
         "detail_introduction",
         "sort",
-        "normal_description"
+        "type_sort"
     ]
 },
 {
@@ -2083,8 +2060,10 @@ var mappings = [
 {
     "name": "enemy_illustration",
     "fields": [
+        "sub_id",
         "id",
         "name",
+        "sub_name",
         "type",
         "code",
         "introduce",
@@ -2098,6 +2077,7 @@ var mappings = [
         "armor_rank",
         "speed_rank",
         "range_rank",
+        "tenacity_rank",
         "counter",
         "character",
         "enemy_skill",
@@ -2105,8 +2085,7 @@ var mappings = [
         "extra",
         "spine_scale",
         "org_id",
-        "related_story_id",
-        "tenacity_rank"
+        "related_story_id"
     ]
 },
 {
@@ -4363,6 +4342,155 @@ var mappings = [
         "vehicle_ids",
         "pic_code",
         "desc"
+    ]
+},
+{
+    "name": "letter",
+    "fields": [
+        "id",
+        "type",
+        "quote_id",
+        "code"
+    ]
+},
+{
+    "name": "list_to_do",
+    "fields": [
+        "id",
+        "group",
+        "sort",
+        "type",
+        "description",
+        "function_control_id",
+        "goto_page_id"
+    ]
+},
+{
+    "name": "breakout_drop",
+    "fields": [
+        "id",
+        "code",
+        "drop_item",
+        "drop_weight",
+        "drop_times"
+    ]
+},
+{
+    "name": "breakout_enemy",
+    "fields": [
+        "id",
+        "code",
+        "icon",
+        "name",
+        "hp",
+        "atk",
+        "rate",
+        "dodge",
+        "armor",
+        "piercing",
+        "range",
+        "speed",
+        "shield",
+        "skills",
+        "skill_dec",
+        "drop",
+        "bt_tree"
+    ]
+},
+{
+    "name": "breakout_gun",
+    "fields": [
+        "id",
+        "code",
+        "icon",
+        "name",
+        "type",
+        "cost_deploy",
+        "cost_upgrade",
+        "cost_mre",
+        "hp",
+        "atk",
+        "rate",
+        "dodge",
+        "armor",
+        "piercing",
+        "range",
+        "speed",
+        "shield",
+        "skills",
+        "skill_dec",
+        "deployment_cd",
+        "bt_tree"
+    ]
+},
+{
+    "name": "breakout_item",
+    "fields": [
+        "id",
+        "name",
+        "icon",
+        "dec",
+        "type",
+        "cost_part",
+        "sold_part",
+        "skill_ids"
+    ]
+},
+{
+    "name": "breakout_phase",
+    "fields": [
+        "id",
+        "mission",
+        "order",
+        "name",
+        "breakout_gun_inshop",
+        "breakout_item_inshop",
+        "breakout_mre_reg",
+        "goal",
+        "enemy_show",
+        "item_drop",
+        "drop_missionkey",
+        "main",
+        "breakout_ammo_ini",
+        "breakout_ammo_max",
+        "breakout_ammo_reg",
+        "breakout_ap_ini",
+        "breakout_ap_max",
+        "breakout_ap_reg",
+        "trigger",
+        "avg_start_service",
+        "avg_end_service",
+        "avg_battle",
+        "background",
+        "npc_talk"
+    ]
+},
+{
+    "name": "breakout_skill",
+    "fields": [
+        "id",
+        "action",
+        "node",
+        "effect",
+        "percentage",
+        "delay",
+        "special"
+    ]
+},
+{
+    "name": "breakout_trigger",
+    "fields": [
+        "id",
+        "bt_tree"
+    ]
+},
+{
+    "name": "breakout_talk",
+    "fields": [
+        "id",
+        "trigger",
+        "weight",
+        "line"
     ]
 }
 ]
