@@ -1410,7 +1410,10 @@ var mappings = [
         "start_time",
         "end_time",
         "is_new",
-        "increase"
+        "increase",
+        "type_id",
+        "sort",
+        "obtain"
     ]
 },
 {
@@ -1667,7 +1670,9 @@ var mappings = [
         "shader",
         "vehicle_engine_efficacy",
         "vehicle_assist_range",
-        "vehicle_longattack_range"
+        "vehicle_longattack_range",
+        "leader_code_switch",
+        "battleunit_code_switch"
     ]
 },
 {
@@ -1721,7 +1726,10 @@ var mappings = [
         "mission_id",
         "condition",
         "commander_title",
-        "unlock_function"
+        "unlock_function",
+        "if_steam",
+        "if_hidden",
+        "steam_code"
     ]
 },
 {
@@ -2085,7 +2093,8 @@ var mappings = [
         "extra",
         "spine_scale",
         "org_id",
-        "related_story_id"
+        "related_story_id",
+        "is_additional"
     ]
 },
 {
@@ -3746,7 +3755,8 @@ var mappings = [
         "page_id",
         "continuous_time",
         "return_task",
-        "prize_id"
+        "prize_id",
+        "prize_id_sp"
     ]
 },
 {
@@ -4491,6 +4501,29 @@ var mappings = [
         "trigger",
         "weight",
         "line"
+    ]
+},
+{
+    "name": "exmall_classification",
+    "fields": [
+        "id",
+        "sort",
+        "name",
+        "en_name",
+        "code"
+    ]
+},
+{
+    "name": "mission_skip",
+    "fields": [
+        "id",
+        "mission",
+        "mission_unlock",
+        "price",
+        "title",
+        "content",
+        "mission_text",
+        "stage"
     ]
 }
 ]
